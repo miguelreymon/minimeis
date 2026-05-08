@@ -1,8 +1,26 @@
 node_modules/
+.next/
+out/
 build/
 dist/
 coverage/
 .DS_Store
 *.log
+
+# env
 .env*
 !.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Emergent platform internals (no son parte del proyecto Next.js)
+/backend/
+/frontend/
+/memory/
+/test_reports/
+/test_result.md
