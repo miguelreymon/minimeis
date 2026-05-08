@@ -1126,6 +1126,20 @@ function HomeTab({ sc, update }: { sc: AnyObj; update: (fn: (d: AnyObj) => void)
       </Section>
 
       <Section title="Hero interno (imagen entre secciones)">
+        <p className="text-sm text-slate-600 -mt-2">
+          Es la imagen larga (típicamente la de &laquo;emuladores compatibles&raquo;) que se muestra
+          en la página del producto, justo encima de la galería. Desactiva el check para
+          ocultarla por completo.
+        </p>
+        <label className="flex items-center gap-2 text-sm">
+          <input
+            type="checkbox"
+            checked={h.heroImageEnabled !== false}
+            onChange={(e) => setH((h) => (h.heroImageEnabled = e.target.checked))}
+            data-testid="hero-image-enabled"
+          />
+          Mostrar la imagen de emuladores en la página de producto
+        </label>
         <Field label="Imagen (emuladores etc.)">
           <ImagePicker value={h.heroImage} onChange={(v) => setH((h) => (h.heroImage = v))} />
         </Field>

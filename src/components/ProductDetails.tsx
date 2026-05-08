@@ -339,15 +339,15 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
           {/* Color Selection */}
           <div className="space-y-3">
             <h3 className="text-sm font-bold uppercase tracking-wider">{product.selectionOptions.colors.label}</h3>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="flex flex-wrap gap-3">
               {product.selectionOptions.colors.options.map((option) => (
-                <div key={option.id} className="space-y-2">
+                <div key={option.id} className="flex flex-col items-center gap-1.5 w-24">
                   <button
                     onClick={() => setSelectedColor(option.id)}
                     className={cn(
-                      "w-full aspect-square relative rounded-3xl border-2 overflow-hidden transition-all",
+                      "w-24 h-24 relative rounded-2xl border-2 overflow-hidden transition-all",
                       selectedColor === option.id
-                        ? "border-primary ring-4 ring-primary/20"
+                        ? "border-primary ring-2 ring-primary/20"
                         : "border-muted hover:border-muted-foreground"
                     )}
                   >
@@ -355,13 +355,13 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                       src={getImage(option.image)}
                       alt={option.name}
                       fill
-                      sizes="(max-width: 768px) 50vw, 256px"
-                      className="object-contain p-4"
+                      sizes="96px"
+                      className="object-contain p-2"
                       referrerPolicy="no-referrer"
                     />
                   </button>
                   <p className={cn(
-                    "text-center font-bold text-sm",
+                    "text-center font-semibold text-xs leading-tight",
                     selectedColor === option.id ? "text-foreground" : "text-muted-foreground"
                   )}>
                     {option.name}

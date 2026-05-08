@@ -15,7 +15,7 @@
   ],
   "siteContent": {
     "header": {
-      "logo": "/images/aaa.webp",
+      "logo": "/images/Group_150x_2x.avif",
       "announcementBar": "🤍​ LIQUIDACION DE STOCK. SOLO HOY –50 % DTO Y ENVIO GRATIS 🤍"
     },
     "footer": {
@@ -783,23 +783,7 @@
         "id": "fitboard-set",
         "name": "Pistola Arcade",
         "cartImage": "/images/portada.webp",
-        "variants": [
-          {
-            "id": "10k",
-            "name": "1 Jugador",
-            "price": 99,
-            "originalPrice": 199,
-            "stock": 6
-          },
-          {
-            "id": "33k",
-            "name": "2 Jugadores",
-            "price": 139,
-            "originalPrice": 280,
-            "isBestSeller": true,
-            "stock": 2
-          }
-        ],
+        "variants": [],
         "images": [
           {
             "id": "gallery-main",
@@ -875,12 +859,12 @@
               {
                 "id": "black",
                 "name": "Negro",
-                "image": "/images/11.webp"
+                "image": "/images/minimeisfoto.webp"
               },
               {
                 "id": "blue",
                 "name": "Azul",
-                "image": "/images/22.webp"
+                "image": "/images/Group_150x_2x.avif"
               }
             ]
           }
@@ -893,7 +877,7 @@
             "Gameover te da la libertad de jugar a los shooters arcade como se concibieron originalmente: sin cables que te limiten ni distracciones que interrumpan la experiencia. Es totalmente inalámbrico , sensible y está diseñado para que te resulte natural en las manos. Te mueves con libertad, apuntas instintivamente y mantienes la puntería. Cada disparo pone a prueba tu habilidad, ofreciendo una experiencia de tiro totalmente inmersiva que recompensa la precisión y el control."
           ],
           "listItems": [],
-          "imageSrc": "/images/1.1.mp4"
+          "imageSrc": "/images/minimeisfoto.webp"
         },
         "featureSection2": {
           "title": "✅​ Sincronización del retroceso",
@@ -901,8 +885,26 @@
             "Hemos creado un programa específico de sincronización de retroceso para Retro Gun . Sincroniza el retroceso y la vibración con la acción en pantalla. Ajusta la respuesta para que las pistolas, las escopetas y las ametralladoras tengan cada una su propia potencia y velocidad de retroceso , de modo que realmente se siente como si estuvieras sosteniendo un arma diferente. Sin munición, no hay retroceso. Recargar produce una vibración perceptible. Compatible con MameHooker, QmameHooker, Hook of the Reaper y DemulShooter para una retroalimentación precisa y adaptada al juego."
           ],
           "listItems": [],
-          "imageSrc": "/images/2.mp4"
-        }
+          "imageSrc": "/images/minimeis2.mp4"
+        },
+        "featureSections": [
+          {
+            "title": "🎮 Las consolas retro están de moda.",
+            "paragraphs": [
+              "Gameover te da la libertad de jugar a los shooters arcade como se concibieron originalmente: sin cables que te limiten ni distracciones que interrumpan la experiencia. Es totalmente inalámbrico , sensible y está diseñado para que te resulte natural en las manos. Te mueves con libertad, apuntas instintivamente y mantienes la puntería. Cada disparo pone a prueba tu habilidad, ofreciendo una experiencia de tiro totalmente inmersiva que recompensa la precisión y el control."
+            ],
+            "listItems": [],
+            "imageSrc": "/images/minimeisfoto.webp"
+          },
+          {
+            "title": "✅​ Sincronización del retroceso",
+            "paragraphs": [
+              "Hemos creado un programa específico de sincronización de retroceso para Retro Gun . Sincroniza el retroceso y la vibración con la acción en pantalla. Ajusta la respuesta para que las pistolas, las escopetas y las ametralladoras tengan cada una su propia potencia y velocidad de retroceso , de modo que realmente se siente como si estuvieras sosteniendo un arma diferente. Sin munición, no hay retroceso. Recargar produce una vibración perceptible. Compatible con MameHooker, QmameHooker, Hook of the Reaper y DemulShooter para una retroalimentación precisa y adaptada al juego."
+            ],
+            "listItems": [],
+            "imageSrc": "/images/minimeis2.mp4"
+          }
+        ]
       }
     ],
     "featuredProductSlug": "consola-gameover-copia-1778171991444",
@@ -916,10 +918,6 @@
       {
         "text": "Inicio",
         "href": "/"
-      },
-      {
-        "text": "Comunidad",
-        "href": "/comunidad"
       },
       {
         "text": "Sobre Nosotros",
@@ -944,7 +942,7 @@
       }
     ],
     "theme": {
-      "primary": "#1B7693",
+      "primary": "#00bcff",
       "accent": "#2EA85C",
       "announcementBg": "#000000"
     }

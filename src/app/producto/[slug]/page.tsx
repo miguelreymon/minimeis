@@ -30,12 +30,13 @@ export default async function ProductPage({
   if (!product) notFound();
 
   const heroImage = content?.homePage?.heroImage;
+  const heroImageEnabled = content?.homePage?.heroImageEnabled !== false; // default true
   const faqSection = content?.homePage?.faqSection;
 
   return (
     <>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {heroImage && (
+        {heroImageEnabled && heroImage && (
           <div className="pt-8">
             <Image
               src={getImage(heroImage)}
