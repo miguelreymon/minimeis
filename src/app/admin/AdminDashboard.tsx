@@ -569,6 +569,23 @@ function ProductEditor({
       </Section>
 
       <Section title="Variantes (versiones y precios)">
+        <label className="flex items-start gap-3 p-3 border rounded bg-amber-50 cursor-pointer hover:bg-amber-100">
+          <input
+            type="checkbox"
+            className="mt-1"
+            checked={!!p.hideVariantSelector}
+            onChange={(e) => setP((p) => (p.hideVariantSelector = e.target.checked))}
+            data-testid="hide-variant-selector"
+          />
+          <div>
+            <div className="font-semibold text-sm">Solo hay una versión (ocultar selector en la web)</div>
+            <div className="text-xs text-slate-600">
+              Marca esta casilla cuando el producto solo tenga UNA versión. La página del producto
+              no mostrará el bloque &laquo;Versión:&raquo; con los recuadros, pero seguirás
+              configurando aquí abajo el precio, el precio original y el stock de la única variante.
+            </div>
+          </div>
+        </label>
         {(p.variants || []).map((v: AnyObj, i: number) => (
           <div key={i} className="border rounded p-3 space-y-2 bg-slate-50">
             <div className="grid grid-cols-2 md:grid-cols-5 gap-2">

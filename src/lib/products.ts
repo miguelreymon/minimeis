@@ -14,6 +14,7 @@ export interface Product {
   name: string;
   cartImage: string;
   variants: ProductVariant[];
+  hideVariantSelector?: boolean;
   images: { id: string; src: string; alt: string; hint: string }[];
   whatsInTheBox: string[];
   productInfoAccordion: {

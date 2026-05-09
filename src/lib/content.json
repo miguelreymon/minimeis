@@ -652,7 +652,8 @@
             "isVerified": true,
             "image": ""
           }
-        ]
+        ],
+        "enabled": false
       },
       "gameSearchSection": {
         "imageSrc": "/images/aa.png"
@@ -697,7 +698,8 @@
             "answer": "¡Entendemos el escepticismo! Gameover es un proyecto creado por fans para fans. Utilizamos tecnología infrarroja estándar de la industria y ofrecemos pagos seguros con Bizum, garantizando la total protección del comprador. Consulta nuestros vídeos de demostración en redes sociales para ver el sistema en acción."
           }
         ]
-      }
+      },
+      "heroImageEnabled": false
     },
     "aboutPage": {
       "hero": {
@@ -781,37 +783,46 @@
     "products": [
       {
         "id": "fitboard-set",
-        "name": "Pistola Arcade",
-        "cartImage": "/images/portada.webp",
-        "variants": [],
+        "name": "EL NUEVO MINIMEIS PORTABEBES DE HOMBRO",
+        "cartImage": "/images/producto1.webp",
+        "variants": [
+          {
+            "id": "nuevo",
+            "name": "Nueva",
+            "price": 89,
+            "originalPrice": 199,
+            "stock": 0,
+            "isBestSeller": true
+          }
+        ],
         "images": [
           {
             "id": "gallery-main",
-            "src": "/images/portada.webp",
+            "src": "/images/foto7.webp",
             "alt": "Consola Gameover con mandos",
             "hint": "retro console"
           },
           {
             "id": "gallery-2",
-            "src": "/images/p1.webp",
+            "src": "/images/foto6.webp",
             "alt": "Consola en un setup de gaming",
             "hint": "gaming setup"
           },
           {
             "id": "gallery-3",
-            "src": "/images/p2.webp",
+            "src": "/images/foto13.webp",
             "alt": "Interfaz de la consola",
             "hint": "console interface"
           },
           {
             "id": "gallery-4",
-            "src": "/images/p11.webp",
+            "src": "/images/foto4.webp",
             "alt": "Captura de pantalla del juego FIFA",
             "hint": "fifa soccer game"
           },
           {
             "id": "gallery-5",
-            "src": "/images/p12.webp",
+            "src": "/images/foto10.webp",
             "alt": "Colección de juegos retro",
             "hint": "retro games"
           }
@@ -859,12 +870,17 @@
               {
                 "id": "black",
                 "name": "Negro",
-                "image": "/images/minimeisfoto.webp"
+                "image": "/images/producto1.webp"
               },
               {
                 "id": "blue",
                 "name": "Azul",
-                "image": "/images/Group_150x_2x.avif"
+                "image": "/images/producto11.webp"
+              },
+              {
+                "id": "nuevo",
+                "name": "Nuevo",
+                "image": "/images/producto6.webp"
               }
             ]
           }

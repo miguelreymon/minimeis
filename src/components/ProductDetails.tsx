@@ -172,7 +172,9 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
     }
     const colorName = product.selectionOptions?.colors?.options?.find(o => o.id === selectedColor)?.name;
 
-    let fullName = `${product.name} - ${selectedVariant.name}`;
+    let fullName = product.hideVariantSelector
+      ? product.name
+      : `${product.name} - ${selectedVariant.name}`;
     if (colorName) fullName += ` - ${colorName}`;
 
     addToCart({
@@ -266,7 +268,8 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
       <CountdownTimer offer={product.countdownOffer} />
 
       <PurchaseBenefits />
-      
+
+      {!product.hideVariantSelector && (
       <div>
         <h3 className="text-sm font-medium mb-2">Versión:</h3>
         <RadioGroup
@@ -333,6 +336,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
           })}
         </RadioGroup>
       </div>
+      )}
 
       {product.selectionOptions && product.selectionOptions.colors?.options?.length > 0 && (
         <div className="space-y-6">
@@ -490,10 +494,12 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
               </h3>
               <h3 className="font-bold hidden sm:block">{product.name}</h3>
               <p className="text-base sm:text-lg font-bold text-accent">
-                {selectedVariant.price.toFixed(0)}€{' '}
-                <span className="text-xs sm:text-sm text-muted-foreground font-normal">
-                  ({selectedVariant.name})
-                </span>
+                {selectedVariant.price.toFixed(0)}€
+                {!product.hideVariantSelector && (
+                  <span className="text-xs sm:text-sm text-muted-foreground font-normal">
+                    {' '}({selectedVariant.name})
+                  </span>
+                )}
               </p>
             </div>
           </div>
