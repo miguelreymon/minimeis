@@ -10,12 +10,13 @@ import Image from 'next/image';
 
 export function Faq({ data }: { data?: any }) {
   const faqs = data?.faqs || [];
+  const image = data?.image || '/images/mario.webp';
   return (
     <div className="py-12 bg-black text-white" id="faq">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
             <Image
-                src="/images/mario.webp"
+                src={image}
                 alt="Preguntas Frecuentes"
                 width={300}
                 height={290}

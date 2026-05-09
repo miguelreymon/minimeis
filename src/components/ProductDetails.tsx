@@ -453,7 +453,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
 
       <div className="!mt-0 py-2">
         <Image 
-          src="/images/bizum5.webp" 
+          src={getImage(product.paymentGatewaysImage || '/images/bizum5.webp')}
           alt="Pagos seguros con Bizum" 
           width={600} 
           height={120} 

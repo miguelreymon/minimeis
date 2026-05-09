@@ -566,6 +566,12 @@ function ProductEditor({
         <Field label="Imagen principal (miniatura y carrito)">
           <ImagePicker value={p.cartImage} onChange={(v) => setP((p) => (p.cartImage = v))} />
         </Field>
+        <Field label="Imagen de pasarelas de pago (banner Bizum / Stripe debajo del botón Comprar)">
+          <ImagePicker
+            value={p.paymentGatewaysImage || ''}
+            onChange={(v) => setP((p) => (p.paymentGatewaysImage = v))}
+          />
+        </Field>
       </Section>
 
       <Section title="Variantes (versiones y precios)">
@@ -1342,6 +1348,17 @@ function FaqTab({ sc, update }: { sc: AnyObj; update: (fn: (d: AnyObj) => void) 
         <Text
           value={sc.homePage.faqSection?.title || ''}
           onChange={(v) => update((d) => (d.siteContent.homePage.faqSection.title = v))}
+        />
+      </Field>
+      <Field label="Imagen superior (encima de las preguntas)">
+        <ImagePicker
+          value={sc.homePage.faqSection?.image || ''}
+          onChange={(v) =>
+            update((d) => {
+              if (!d.siteContent.homePage.faqSection) d.siteContent.homePage.faqSection = {};
+              d.siteContent.homePage.faqSection.image = v;
+            })
+          }
         />
       </Field>
       <div className="space-y-3 mt-4">
