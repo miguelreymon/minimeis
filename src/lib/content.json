@@ -16,11 +16,11 @@
   "siteContent": {
     "header": {
       "logo": "/images/Group_150x_2x.avif",
-      "announcementBar": "🤍​ LIQUIDACION DE STOCK. SOLO HOY –50 % DTO Y ENVIO GRATIS 🤍"
+      "announcementBar": "🤍​ LIQUIDACION DE STOCK. SOLO HOY –40 % DTO Y ENVIO GRATIS 🤍"
     },
     "footer": {
       "brandName": "Minimeis",
-      "brandSlogan": "Tu portal a la nostalgia de los videojuegos.",
+      "brandSlogan": "El viaje más genial del mundo.",
       "subscriptionTitle": "Únete a nuestra comunidad",
       "subscriptionSlogan": "Recibe ofertas exclusivas, noticias y más.",
       "whatsAppNumber": "622431478",
@@ -72,7 +72,7 @@
             {
               "id": "nuevo",
               "name": "Nueva",
-              "price": 89,
+              "price": 109,
               "originalPrice": 199,
               "stock": 8,
               "isBestSeller": true
@@ -147,17 +147,17 @@
             "warranty": {
               "title": "Garantía y Devoluciónes",
               "satisfactionGuarantee": "Ofrecemos una Garantía Total de 30 días.",
-              "returnsPolicy": "Si después de probar la Consola Gameover® no quedas satisfecha o surge cualquier problema, nos encargamos de todo y asumimos todos los costes de devolución."
+              "returnsPolicy": "Si no quedas satisfecho o surge cualquier problema, nos encargamos de todo y asumimos todos los costes de devolución."
             },
             "extra": {
               "title": "Soporte Técnico",
-              "content": "Nuestro equipo de soporte está disponible las 24 horas para ayudarte con cualquier duda o problema técnico que puedas tener con tu consola."
+              "content": "Nuestro equipo de soporte está disponible las 24 horas para ayudarte con cualquier duda o problema."
             }
           },
           "distributorBadge": "Distribuidor oficial en España y Europa",
           "purchaseBenefits": {
             "gifts": "Plug & Play en 30 segundos.",
-            "games": "Más de 15.000 juegos arcade.",
+            "games": "",
             "tv": "",
             "items": [
               {
@@ -165,14 +165,14 @@
                 "text": "Plug & Play en 30 segundos."
               },
               {
-                "icon": "Gamepad2",
-                "text": "Más de 15.000 juegos arcade."
+                "icon": "Lock",
+                "text": "Seguridad probada y aprobada según los estándares de la UE y EE. UU."
               }
             ]
           },
           "countdownOffer": {
             "activeText": "Haz tu pedido antes de <strong>{timer}</strong> para conseguir la oferta y envio gratis",
-            "expiredText": "La oferta de 1 año de membresía gratis ha terminado."
+            "expiredText": "La oferta y el envio gratis ha terminado."
           },
           "selectionOptions": {
             "colors": {
@@ -197,7 +197,7 @@
             }
           },
           "slug": "portabebes",
-          "shortDescription": "Consola retro con más de 15.000 juegos arcade, 100% inalámbrica.",
+          "shortDescription": "Como padres, conocemos la emoción de ver el rostro de nuestro hijo iluminarse de alegría cuando lo levantan en hombros.",
           "featureSection1": {
             "title": "🎮 Las consolas retro están de moda.",
             "paragraphs": [
@@ -735,7 +735,7 @@
             "image": ""
           }
         ],
-        "enabled": false
+        "enabled": true
       },
       "gameSearchSection": {
         "imageSrc": "/images/aa.png"
@@ -779,7 +779,8 @@
             "question": "Parece demasiado bueno para ser verdad, ¿es una estafa?",
             "answer": "¡Entendemos el escepticismo! Gameover es un proyecto creado por fans para fans. Utilizamos tecnología infrarroja estándar de la industria y ofrecemos pagos seguros con Bizum, garantizando la total protección del comprador. Consulta nuestros vídeos de demostración en redes sociales para ver el sistema en acción."
           }
-        ]
+        ],
+        "image": "/images/minimeisfoto.webp"
       },
       "heroImageEnabled": false
     },
@@ -871,7 +872,7 @@
           {
             "id": "nuevo",
             "name": "Nueva",
-            "price": 89,
+            "price": 109,
             "originalPrice": 199,
             "stock": 8,
             "isBestSeller": true
@@ -946,17 +947,17 @@
           "warranty": {
             "title": "Garantía y Devoluciónes",
             "satisfactionGuarantee": "Ofrecemos una Garantía Total de 30 días.",
-            "returnsPolicy": "Si después de probar la Consola Gameover® no quedas satisfecha o surge cualquier problema, nos encargamos de todo y asumimos todos los costes de devolución."
+            "returnsPolicy": "Si no quedas satisfecho o surge cualquier problema, nos encargamos de todo y asumimos todos los costes de devolución."
           },
           "extra": {
             "title": "Soporte Técnico",
-            "content": "Nuestro equipo de soporte está disponible las 24 horas para ayudarte con cualquier duda o problema técnico que puedas tener con tu consola."
+            "content": "Nuestro equipo de soporte está disponible las 24 horas para ayudarte con cualquier duda o problema."
           }
         },
         "distributorBadge": "Distribuidor oficial en España y Europa",
         "purchaseBenefits": {
           "gifts": "Plug & Play en 30 segundos.",
-          "games": "Más de 15.000 juegos arcade.",
+          "games": "",
           "tv": "",
           "items": [
             {
@@ -964,14 +965,14 @@
               "text": "Plug & Play en 30 segundos."
             },
             {
-              "icon": "Gamepad2",
-              "text": "Más de 15.000 juegos arcade."
+              "icon": "Lock",
+              "text": "Seguridad probada y aprobada según los estándares de la UE y EE. UU."
             }
           ]
         },
         "countdownOffer": {
           "activeText": "Haz tu pedido antes de <strong>{timer}</strong> para conseguir la oferta y envio gratis",
-          "expiredText": "La oferta de 1 año de membresía gratis ha terminado."
+          "expiredText": "La oferta y el envio gratis ha terminado."
         },
         "selectionOptions": {
           "colors": {
@@ -996,7 +997,7 @@
           }
         },
         "slug": "portabebes",
-        "shortDescription": "Consola retro con más de 15.000 juegos arcade, 100% inalámbrica.",
+        "shortDescription": "Como padres, conocemos la emoción de ver el rostro de nuestro hijo iluminarse de alegría cuando lo levantan en hombros.",
         "featureSection1": {
           "title": "🎮 Las consolas retro están de moda.",
           "paragraphs": [
@@ -1067,73 +1068,13 @@
             "label": "GRATIS"
           }
         ]
-      },
-      {
-        "id": "prod-1778322591958",
-        "slug": "e",
-        "name": "Nuevo producto",
-        "shortDescription": "Descripción breve del producto",
-        "cartImage": "/images/aa.png",
-        "variants": [
-          {
-            "id": "v1",
-            "name": "Única",
-            "price": 0,
-            "originalPrice": 0,
-            "isBestSeller": true
-          }
-        ],
-        "images": [
-          {
-            "id": "img1",
-            "src": "/images/aa.png",
-            "alt": "",
-            "hint": ""
-          }
-        ],
-        "whatsInTheBox": [],
-        "productInfoAccordion": {
-          "shipping": {
-            "title": "Envío y seguimiento",
-            "freeShippingTitle": "📦 Envío Gratis",
-            "freeShippingContent": "",
-            "trackingTitle": "🚚 Seguimiento",
-            "trackingContent": "",
-            "contactInfo": ""
-          },
-          "warranty": {
-            "title": "Garantía y Devoluciones",
-            "satisfactionGuarantee": "",
-            "returnsPolicy": ""
-          },
-          "extra": {
-            "title": "Extra",
-            "content": ""
-          }
-        },
-        "distributorBadge": "",
-        "purchaseBenefits": {
-          "gifts": "",
-          "games": "",
-          "tv": ""
-        },
-        "countdownOffer": {
-          "activeText": "",
-          "expiredText": ""
-        },
-        "selectionOptions": {
-          "colors": {
-            "label": "COLOR",
-            "options": []
-          }
-        }
       }
     ],
     "featuredProductSlug": "portabebes",
     "heroBanner": {
-      "image": "/images/portada.webp",
-      "title": "Bienvenido a Gameover",
-      "subtitle": "Las mejores consolas retro, directo a tu salón.",
+      "image": "/images/foto13.webp",
+      "title": "PORTABEBES DE HOMBRO MINIMEIS",
+      "subtitle": "EL VIAJE MÁS GENIAL DEL MUNDO",
       "enabled": true
     },
     "menu": [
