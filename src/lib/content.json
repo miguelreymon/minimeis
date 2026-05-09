@@ -791,7 +791,7 @@
             "name": "Nueva",
             "price": 89,
             "originalPrice": 199,
-            "stock": 0,
+            "stock": 8,
             "isBestSeller": true
           }
         ],
@@ -920,7 +920,8 @@
             "listItems": [],
             "imageSrc": "/images/minimeis2.mp4"
           }
-        ]
+        ],
+        "hideVariantSelector": true
       }
     ],
     "featuredProductSlug": "consola-gameover-copia-1778171991444",
