@@ -23,19 +23,40 @@ import { siteContent as defaultContent } from '@/lib/content';
 import { useConfig } from '@/context/ConfigContext';
 import { getImage } from '@/lib/images';
 
-export default function CustomerReviewsCarousel() {
+type CarouselVideo = {
+  id?: string;
+  src: string;
+  title?: string;
+  alt?: string;
+  thumbnail?: string;
+  videoUrl?: string;
+};
+
+type CarouselSection = {
+  enabled?: boolean;
+  title?: string;
+  videos?: CarouselVideo[];
+};
+
+interface CustomerReviewsCarouselProps {
+  section?: CarouselSection;
+}
+
+export default function CustomerReviewsCarousel({ section: sectionOverride }: CustomerReviewsCarouselProps = {}) {
   const config = useConfig();
   const siteContent = config || defaultContent;
-  const section = siteContent.homePage.customerReviewsCarouselSection as {
-    enabled?: boolean;
-    title: string;
-    videos: { thumbnail: string; videoUrl?: string; title?: string; alt?: string }[];
-  };
+  const globalSection = siteContent.homePage.customerReviewsCarouselSection as CarouselSection | undefined;
+
+  // Prefer the per-product override when it exists AND has its own videos defined.
+  // (An empty array on the override is respected — it means "this product hides the carousel".)
+  const hasProductOverride =
+    sectionOverride && Array.isArray(sectionOverride.videos);
+  const section: CarouselSection = hasProductOverride ? (sectionOverride as CarouselSection) : (globalSection || {});
 
   const customerVideos = section?.videos || [];
-  const title = section?.title || '';
+  const title = section?.title || globalSection?.title || '';
 
-  const [selectedVideo, setSelectedVideo] = useState<typeof customerVideos[0] | null>(null);
+  const [selectedVideo, setSelectedVideo] = useState<CarouselVideo | null>(null);
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
@@ -49,8 +70,11 @@ export default function CustomerReviewsCarousel() {
     };
   }, [api]);
 
-  // Hide entirely if explicitly disabled from admin (after hooks per React rules).
+  // Hide entirely if explicitly disabled (per-product override takes precedence over global).
   if (section?.enabled === false) return null;
+  if (!hasProductOverride && globalSection?.enabled === false) return null;
+  // Nothing to render? Hide the whole block (empty title + empty videos).
+  if (customerVideos.length === 0) return null;
 
   return (
     <div className="py-6">
@@ -63,11 +87,11 @@ export default function CustomerReviewsCarousel() {
         className="w-full"
       >
         <CarouselContent className="-ml-2">
-          {customerVideos.map((video) => (
-            <CarouselItem key={video.id} className="pl-2 basis-full sm:basis-1/2 md:basis-1/3">
+          {customerVideos.map((video, vIdx) => (
+            <CarouselItem key={video.id || `${video.src}-${vIdx}`} className="pl-2 basis-full sm:basis-1/2 md:basis-1/3">
               <div className="p-1">
                 <Dialog
-                  open={selectedVideo?.id === video.id}
+                  open={selectedVideo?.src === video.src && (selectedVideo?.id || '') === (video.id || '')}
                   onOpenChange={(open) => {
                     if (!open) setSelectedVideo(null);
                   }}

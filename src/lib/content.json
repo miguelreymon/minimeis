@@ -65,37 +65,46 @@
       "productSection": {
         "product": {
           "id": "fitboard-set",
-          "name": "Consola Gameover",
-          "cartImage": "/images/portada.webp",
-          "variants": [],
+          "name": "EL NUEVO MINIMEIS PORTABEBES DE HOMBRO G5",
+          "cartImage": "/images/producto1.webp",
+          "variants": [
+            {
+              "id": "nuevo",
+              "name": "Nueva",
+              "price": 89,
+              "originalPrice": 199,
+              "stock": 8,
+              "isBestSeller": true
+            }
+          ],
           "images": [
             {
               "id": "gallery-main",
-              "src": "/images/1__2_.png",
+              "src": "/images/foto7.webp",
               "alt": "Consola Gameover con mandos",
               "hint": "retro console"
             },
             {
               "id": "gallery-2",
-              "src": "/images/1714411601600_copia.jpeg",
+              "src": "/images/foto6.webp",
               "alt": "Consola en un setup de gaming",
               "hint": "gaming setup"
             },
             {
               "id": "gallery-3",
-              "src": "/images/p2.webp",
+              "src": "/images/foto13.webp",
               "alt": "Interfaz de la consola",
               "hint": "console interface"
             },
             {
               "id": "gallery-4",
-              "src": "/images/p11.webp",
+              "src": "/images/foto4.webp",
               "alt": "Captura de pantalla del juego FIFA",
               "hint": "fifa soccer game"
             },
             {
               "id": "gallery-5",
-              "src": "/images/p12.webp",
+              "src": "/images/foto10.webp",
               "alt": "Colección de juegos retro",
               "hint": "retro games"
             }
@@ -130,7 +139,17 @@
           "purchaseBenefits": {
             "gifts": "Plug & Play en 30 segundos.",
             "games": "Más de 15.000 juegos arcade.",
-            "tv": "Funciona con cualquier TV"
+            "tv": "",
+            "items": [
+              {
+                "icon": "Gift",
+                "text": "Plug & Play en 30 segundos."
+              },
+              {
+                "icon": "Gamepad2",
+                "text": "Más de 15.000 juegos arcade."
+              }
+            ]
           },
           "countdownOffer": {
             "activeText": "Haz tu pedido antes de <strong>{timer}</strong> para conseguir la oferta y envio gratis",
@@ -139,10 +158,26 @@
           "selectionOptions": {
             "colors": {
               "label": "COLOR",
-              "options": []
+              "options": [
+                {
+                  "id": "black",
+                  "name": "Negro",
+                  "image": "/images/producto1.webp"
+                },
+                {
+                  "id": "blue",
+                  "name": "Azul",
+                  "image": "/images/producto11.webp"
+                },
+                {
+                  "id": "nuevo",
+                  "name": "Nuevo",
+                  "image": "/images/producto6.webp"
+                }
+              ]
             }
           },
-          "slug": "consola-gameover-copia-1778171991444",
+          "slug": "portabebes",
           "shortDescription": "Consola retro con más de 15.000 juegos arcade, 100% inalámbrica.",
           "featureSection1": {
             "title": "🎮 Las consolas retro están de moda.",
@@ -150,7 +185,7 @@
               "Gameover te da la libertad de jugar a los shooters arcade como se concibieron originalmente: sin cables que te limiten ni distracciones que interrumpan la experiencia. Es totalmente inalámbrico , sensible y está diseñado para que te resulte natural en las manos. Te mueves con libertad, apuntas instintivamente y mantienes la puntería. Cada disparo pone a prueba tu habilidad, ofreciendo una experiencia de tiro totalmente inmersiva que recompensa la precisión y el control."
             ],
             "listItems": [],
-            "imageSrc": "/images/1.1.mp4"
+            "imageSrc": "/images/minimeisfoto.webp"
           },
           "featureSection2": {
             "title": "✅​ Sincronización del retroceso",
@@ -158,7 +193,7 @@
               "Hemos creado un programa específico de sincronización de retroceso para Retro Gun . Sincroniza el retroceso y la vibración con la acción en pantalla. Ajusta la respuesta para que las pistolas, las escopetas y las ametralladoras tengan cada una su propia potencia y velocidad de retroceso , de modo que realmente se siente como si estuvieras sosteniendo un arma diferente. Sin munición, no hay retroceso. Recargar produce una vibración perceptible. Compatible con MameHooker, QmameHooker, Hook of the Reaper y DemulShooter para una retroalimentación precisa y adaptada al juego."
             ],
             "listItems": [],
-            "imageSrc": "/images/2.mp4"
+            "imageSrc": "/images/minimeis2.mp4"
           },
           "featureSections": [
             {
@@ -167,7 +202,7 @@
                 "Gameover te da la libertad de jugar a los shooters arcade como se concibieron originalmente: sin cables que te limiten ni distracciones que interrumpan la experiencia. Es totalmente inalámbrico , sensible y está diseñado para que te resulte natural en las manos. Te mueves con libertad, apuntas instintivamente y mantienes la puntería. Cada disparo pone a prueba tu habilidad, ofreciendo una experiencia de tiro totalmente inmersiva que recompensa la precisión y el control."
               ],
               "listItems": [],
-              "imageSrc": "/images/1.1.mp4"
+              "imageSrc": "/images/minimeisfoto.webp"
             },
             {
               "title": "✅​ Sincronización del retroceso",
@@ -175,15 +210,43 @@
                 "Hemos creado un programa específico de sincronización de retroceso para Retro Gun . Sincroniza el retroceso y la vibración con la acción en pantalla. Ajusta la respuesta para que las pistolas, las escopetas y las ametralladoras tengan cada una su propia potencia y velocidad de retroceso , de modo que realmente se siente como si estuvieras sosteniendo un arma diferente. Sin munición, no hay retroceso. Recargar produce una vibración perceptible. Compatible con MameHooker, QmameHooker, Hook of the Reaper y DemulShooter para una retroalimentación precisa y adaptada al juego."
               ],
               "listItems": [],
-              "imageSrc": "/images/2.mp4"
+              "imageSrc": "/images/minimeis2.mp4"
+            }
+          ],
+          "hideVariantSelector": true,
+          "paymentGatewaysImage": "/images/bizum.webp",
+          "customerReviewsCarouselSection": {
+            "enabled": true,
+            "title": "Historias de Minimeis",
+            "videos": [
+              {
+                "id": "vid-1778322424644",
+                "src": "/images/disney.mp4",
+                "title": ""
+              },
+              {
+                "id": "vid-1778322450469",
+                "src": "/images/minimeis2.mp4",
+                "title": ""
+              }
+            ]
+          },
+          "upsells": [
+            {
+              "id": "upsell-1778323584970",
+              "enabled": true,
+              "name": "bolsa minimeis",
+              "image": "/images/producto6.webp",
+              "price": 0,
+              "label": "dfdsfd"
             },
             {
-              "title": "Nueva seccióndsadsad",
-              "paragraphs": [
-                "sadsafdsafd"
-              ],
-              "listItems": [],
-              "imageSrc": "/images/v11.avif"
+              "id": "upsell-1778323609960",
+              "enabled": true,
+              "name": "1 año de garantia extra",
+              "image": "/images/aa.png",
+              "price": 1,
+              "label": "GRATIS"
             }
           ]
         }
@@ -782,8 +845,8 @@
     },
     "products": [
       {
-        "id": "fitboard-set",
-        "name": "EL NUEVO MINIMEIS PORTABEBES DE HOMBRO",
+        "id": "portabebes",
+        "name": "EL NUEVO MINIMEIS PORTABEBES DE HOMBRO G5",
         "cartImage": "/images/producto1.webp",
         "variants": [
           {
@@ -857,7 +920,17 @@
         "purchaseBenefits": {
           "gifts": "Plug & Play en 30 segundos.",
           "games": "Más de 15.000 juegos arcade.",
-          "tv": "Funciona con cualquier TV"
+          "tv": "",
+          "items": [
+            {
+              "icon": "Gift",
+              "text": "Plug & Play en 30 segundos."
+            },
+            {
+              "icon": "Gamepad2",
+              "text": "Más de 15.000 juegos arcade."
+            }
+          ]
         },
         "countdownOffer": {
           "activeText": "Haz tu pedido antes de <strong>{timer}</strong> para conseguir la oferta y envio gratis",
@@ -885,7 +958,7 @@
             ]
           }
         },
-        "slug": "consola-gameover",
+        "slug": "portabebes",
         "shortDescription": "Consola retro con más de 15.000 juegos arcade, 100% inalámbrica.",
         "featureSection1": {
           "title": "🎮 Las consolas retro están de moda.",
@@ -921,10 +994,105 @@
             "imageSrc": "/images/minimeis2.mp4"
           }
         ],
-        "hideVariantSelector": true
+        "hideVariantSelector": true,
+        "paymentGatewaysImage": "/images/bizum.webp",
+        "customerReviewsCarouselSection": {
+          "enabled": true,
+          "title": "Historias de Minimeis",
+          "videos": [
+            {
+              "id": "vid-1778322424644",
+              "src": "/images/disney.mp4",
+              "title": ""
+            },
+            {
+              "id": "vid-1778322450469",
+              "src": "/images/minimeis2.mp4",
+              "title": ""
+            }
+          ]
+        },
+        "upsells": [
+          {
+            "id": "upsell-1778323584970",
+            "enabled": true,
+            "name": "bolsa minimeis",
+            "image": "/images/producto6.webp",
+            "price": 0,
+            "label": "dfdsfd"
+          },
+          {
+            "id": "upsell-1778323609960",
+            "enabled": true,
+            "name": "1 año de garantia extra",
+            "image": "/images/aa.png",
+            "price": 1,
+            "label": "GRATIS"
+          }
+        ]
+      },
+      {
+        "id": "prod-1778322591958",
+        "slug": "e",
+        "name": "Nuevo producto",
+        "shortDescription": "Descripción breve del producto",
+        "cartImage": "/images/aa.png",
+        "variants": [
+          {
+            "id": "v1",
+            "name": "Única",
+            "price": 0,
+            "originalPrice": 0,
+            "isBestSeller": true
+          }
+        ],
+        "images": [
+          {
+            "id": "img1",
+            "src": "/images/aa.png",
+            "alt": "",
+            "hint": ""
+          }
+        ],
+        "whatsInTheBox": [],
+        "productInfoAccordion": {
+          "shipping": {
+            "title": "Envío y seguimiento",
+            "freeShippingTitle": "📦 Envío Gratis",
+            "freeShippingContent": "",
+            "trackingTitle": "🚚 Seguimiento",
+            "trackingContent": "",
+            "contactInfo": ""
+          },
+          "warranty": {
+            "title": "Garantía y Devoluciones",
+            "satisfactionGuarantee": "",
+            "returnsPolicy": ""
+          },
+          "extra": {
+            "title": "Extra",
+            "content": ""
+          }
+        },
+        "distributorBadge": "",
+        "purchaseBenefits": {
+          "gifts": "",
+          "games": "",
+          "tv": ""
+        },
+        "countdownOffer": {
+          "activeText": "",
+          "expiredText": ""
+        },
+        "selectionOptions": {
+          "colors": {
+            "label": "COLOR",
+            "options": []
+          }
+        }
       }
     ],
-    "featuredProductSlug": "consola-gameover-copia-1778171991444",
+    "featuredProductSlug": "portabebes",
     "heroBanner": {
       "image": "/images/portada.webp",
       "title": "Bienvenido a Gameover",

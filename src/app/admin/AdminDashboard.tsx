@@ -440,6 +440,7 @@ function ProductsTab({ sc, update }: { sc: AnyObj; update: (fn: (d: AnyObj) => v
           allProducts={products}
           editingIndex={editing}
           onChange={(mut) => setProducts((arr) => mut(arr[editing]))}
+          sc={sc}
         />
       </>
     );
@@ -522,11 +523,13 @@ function ProductEditor({
   allProducts,
   editingIndex,
   onChange,
+  sc,
 }: {
   product: AnyObj;
   allProducts: AnyObj[];
   editingIndex: number;
   onChange: (mut: (p: AnyObj) => void) => void;
+  sc: AnyObj;
 }) {
   const p = product;
   const setP = onChange;
@@ -720,44 +723,12 @@ function ProductEditor({
         </AddBtn>
       </Section>
 
-      <Section title="Beneficios y Qué incluye la caja">
-        <div className="grid grid-cols-3 gap-3">
-          <Field label="Regalos">
-            <Text
-              value={p.purchaseBenefits?.gifts || ''}
-              onChange={(v) =>
-                setP((p) => {
-                  if (!p.purchaseBenefits) p.purchaseBenefits = {};
-                  p.purchaseBenefits.gifts = v;
-                })
-              }
-            />
-          </Field>
-          <Field label="Juegos">
-            <Text
-              value={p.purchaseBenefits?.games || ''}
-              onChange={(v) =>
-                setP((p) => {
-                  if (!p.purchaseBenefits) p.purchaseBenefits = {};
-                  p.purchaseBenefits.games = v;
-                })
-              }
-            />
-          </Field>
-          <Field label="TV">
-            <Text
-              value={p.purchaseBenefits?.tv || ''}
-              onChange={(v) =>
-                setP((p) => {
-                  if (!p.purchaseBenefits) p.purchaseBenefits = {};
-                  p.purchaseBenefits.tv = v;
-                })
-              }
-            />
-          </Field>
-        </div>
-        <div className="mt-4">
-          <p className="text-sm font-medium mb-2">Qué incluye la caja</p>
+      <Section title="Beneficios de compra (con icono)">
+        <PurchaseBenefitsEditor product={p} setP={setP} />
+      </Section>
+
+      <Section title="Qué incluye la caja">
+        <div>
           {(p.whatsInTheBox || []).map((item: string, i: number) => (
             <div key={i} className="flex gap-2 mb-2">
               <Text value={item} onChange={(v) => setP((p) => (p.whatsInTheBox[i] = v))} />
@@ -831,6 +802,10 @@ function ProductEditor({
       <CopyFeatureSectionsBlock product={p} setP={setP} allProducts={allProducts} editingIndex={editingIndex} />
 
       <FeatureSectionsEditor product={p} setP={setP} />
+
+      <PlayersInActionEditor product={p} setP={setP} allProducts={allProducts} editingIndex={editingIndex} />
+
+      <UpsellsEditor product={p} setP={setP} allProducts={allProducts} editingIndex={editingIndex} sc={sc} />
     </>
   );
 }
@@ -1054,6 +1029,670 @@ function CopyFeatureSectionsBlock({
     </Section>
   );
 }
+
+/* ---------- Players in Action (per-product video carousel) ---------- */
+
+function PlayersInActionEditor({
+  product,
+  setP,
+  allProducts,
+  editingIndex,
+}: {
+  product: AnyObj;
+  setP: (mut: (p: AnyObj) => void) => void;
+  allProducts: AnyObj[];
+  editingIndex: number;
+}) {
+  const section: AnyObj = product.customerReviewsCarouselSection || {};
+  const hasOverride = Array.isArray(product.customerReviewsCarouselSection?.videos);
+  const videos: AnyObj[] = section.videos || [];
+  const enabled = section.enabled !== false; // default true
+
+  const ensureSection = (p: AnyObj) => {
+    if (!p.customerReviewsCarouselSection) {
+      p.customerReviewsCarouselSection = {
+        enabled: true,
+        title: 'Nuestros Jugadores en Acción',
+        videos: [],
+      };
+    }
+    if (!Array.isArray(p.customerReviewsCarouselSection.videos)) {
+      p.customerReviewsCarouselSection.videos = [];
+    }
+    return p.customerReviewsCarouselSection;
+  };
+
+  const setSection = (mut: (s: AnyObj) => void) =>
+    setP((p) => {
+      const s = ensureSection(p);
+      mut(s);
+    });
+
+  const setVideos = (mut: (arr: AnyObj[]) => void) =>
+    setP((p) => {
+      const s = ensureSection(p);
+      mut(s.videos);
+    });
+
+  const others = allProducts.filter((_, i) => i !== editingIndex);
+  const [copySource, setCopySource] = useState<string>(others[0]?.id || '');
+
+  const copyFromOther = () => {
+    const src = others.find((o) => o.id === copySource) || others[0];
+    if (!src) return;
+    const srcSection = src.customerReviewsCarouselSection || {};
+    const srcVideos = Array.isArray(srcSection.videos) ? srcSection.videos : [];
+    if (srcVideos.length === 0) {
+      alert('Ese producto no tiene vídeos configurados para copiar.');
+      return;
+    }
+    if (
+      !confirm(
+        `¿Copiar ${srcVideos.length} vídeo(s) desde "${src.name}"? Se sobreescribirán los actuales.`
+      )
+    )
+      return;
+    setP((p) => {
+      ensureSection(p);
+      p.customerReviewsCarouselSection.title =
+        srcSection.title || p.customerReviewsCarouselSection.title;
+      p.customerReviewsCarouselSection.videos = srcVideos.map((v: AnyObj) => clone(v));
+    });
+  };
+
+  return (
+    <Section title="🎬 Vídeos «Nuestros Jugadores en Acción» (por producto)">
+      <p className="text-sm text-slate-600 -mt-2">
+        Configura los vídeos verticales (formato 9:16, .mp4 / .webm / .mov) que se muestran en el
+        carrusel debajo del bloque de información del producto. Cada producto tiene sus propios
+        vídeos. Si dejas la lista vacía y desactivas la casilla, el carrusel no aparece en este
+        producto.
+      </p>
+
+      <label className="flex items-start gap-3 p-3 border rounded bg-slate-50 cursor-pointer hover:bg-slate-100">
+        <input
+          type="checkbox"
+          className="mt-1"
+          checked={enabled}
+          onChange={(e) => setSection((s) => (s.enabled = e.target.checked))}
+          data-testid="players-in-action-enabled"
+        />
+        <div>
+          <div className="font-semibold text-sm">Mostrar carrusel de vídeos en este producto</div>
+          <div className="text-xs text-slate-600">
+            Si lo desactivas, el bloque entero «Nuestros Jugadores en Acción» se oculta SOLO en
+            este producto.
+          </div>
+        </div>
+      </label>
+
+      <Field label="Título de la sección">
+        <Text
+          value={section.title || ''}
+          onChange={(v) => setSection((s) => (s.title = v))}
+          testid="players-in-action-title"
+        />
+      </Field>
+
+      {!hasOverride && (
+        <p className="text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded p-2">
+          Aún no has configurado vídeos específicos para este producto, así que se usan los vídeos
+          globales por compatibilidad. En cuanto añadas o copies un vídeo aquí, este producto
+          tendrá su propia lista independiente.
+        </p>
+      )}
+
+      <div className="space-y-3">
+        {videos.map((v, i) => (
+          <div
+            key={i}
+            className="border-2 rounded-lg p-3 bg-slate-50 grid grid-cols-1 md:grid-cols-[2fr_2fr_auto] gap-3 items-end"
+            data-testid={`player-video-row-${i}`}
+          >
+            <Field label={`Vídeo ${i + 1} (archivo)`}>
+              <ImagePicker
+                value={v.src || ''}
+                onChange={(val) => setVideos((arr) => (arr[i].src = val))}
+              />
+            </Field>
+            <Field label="Título / descripción (opcional)">
+              <Text
+                value={v.title || ''}
+                onChange={(val) => setVideos((arr) => (arr[i].title = val))}
+              />
+            </Field>
+            <div className="flex items-center gap-1">
+              <button
+                type="button"
+                disabled={i === 0}
+                onClick={() =>
+                  setVideos((arr) => {
+                    [arr[i - 1], arr[i]] = [arr[i], arr[i - 1]];
+                  })
+                }
+                className="text-xs px-2 py-1 border rounded bg-white hover:bg-slate-100 disabled:opacity-30 disabled:cursor-not-allowed"
+                aria-label="Subir vídeo"
+              >
+                ↑
+              </button>
+              <button
+                type="button"
+                disabled={i === videos.length - 1}
+                onClick={() =>
+                  setVideos((arr) => {
+                    [arr[i + 1], arr[i]] = [arr[i], arr[i + 1]];
+                  })
+                }
+                className="text-xs px-2 py-1 border rounded bg-white hover:bg-slate-100 disabled:opacity-30 disabled:cursor-not-allowed"
+                aria-label="Bajar vídeo"
+              >
+                ↓
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  if (!confirm('¿Eliminar este vídeo?')) return;
+                  setVideos((arr) => arr.splice(i, 1));
+                }}
+                className="text-xs px-2 py-1 border border-red-300 text-red-700 rounded bg-white hover:bg-red-50"
+                data-testid={`delete-player-video-${i}`}
+              >
+                Eliminar
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <AddBtn
+        onClick={() =>
+          setVideos((arr) =>
+            arr.push({
+              id: `vid-${Date.now()}`,
+              src: '',
+              title: '',
+            })
+          )
+        }
+      >
+        + Añadir vídeo
+      </AddBtn>
+
+      {others.length > 0 && (
+        <div className="mt-4 pt-4 border-t border-dashed">
+          <p className="text-sm font-semibold mb-2">↪ Copiar vídeos desde otro producto</p>
+          <div className="grid grid-cols-1 md:grid-cols-[2fr_auto] gap-2 items-end">
+            <Field label="Producto origen">
+              <select
+                value={copySource || others[0]?.id}
+                onChange={(e) => setCopySource(e.target.value)}
+                className="w-full border rounded px-3 py-2 text-sm"
+                data-testid="players-in-action-copy-source"
+              >
+                {others.map((o) => {
+                  const cnt = Array.isArray(o.customerReviewsCarouselSection?.videos)
+                    ? o.customerReviewsCarouselSection.videos.length
+                    : 0;
+                  return (
+                    <option key={o.id} value={o.id}>
+                      {o.name} ({cnt} vídeo(s))
+                    </option>
+                  );
+                })}
+              </select>
+            </Field>
+            <button
+              type="button"
+              onClick={copyFromOther}
+              className="bg-blue-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-blue-700"
+              data-testid="players-in-action-copy-btn"
+            >
+              Copiar vídeos
+            </button>
+          </div>
+        </div>
+      )}
+    </Section>
+  );
+}
+
+/* ---------- Purchase Benefits (per-product, with icon) ---------- */
+
+const PURCHASE_BENEFIT_ICON_OPTIONS = [
+  'Gift',
+  'Gamepad2',
+  'Tv',
+  'ShieldCheck',
+  'Truck',
+  'Package',
+  'Users',
+  'Sparkles',
+  'Star',
+  'Trophy',
+  'Heart',
+  'Zap',
+  'Wifi',
+  'Headphones',
+  'Music',
+  'Video',
+  'BatteryFull',
+  'Plug',
+  'Cpu',
+  'Award',
+  'BadgeCheck',
+  'Lock',
+  'Flame',
+  'Rocket',
+  'Crown',
+  'CheckCircle2',
+  'Gauge',
+  'Smile',
+] as const;
+
+function PurchaseBenefitsEditor({
+  product,
+  setP,
+}: {
+  product: AnyObj;
+  setP: (mut: (p: AnyObj) => void) => void;
+}) {
+  const pb: AnyObj = product.purchaseBenefits || {};
+  const hasItems = Array.isArray(pb.items);
+
+  // Build the list to display: prefer the new `items` array; otherwise migrate
+  // legacy fields ({gifts, games, tv}) on the fly so the user can edit them.
+  const items: AnyObj[] = hasItems
+    ? pb.items
+    : [
+        pb.gifts ? { icon: 'Gift', text: pb.gifts } : null,
+        pb.games ? { icon: 'Gamepad2', text: pb.games } : null,
+        pb.tv ? { icon: 'Tv', text: pb.tv } : null,
+      ].filter(Boolean);
+
+  const ensureItems = (p: AnyObj) => {
+    if (!p.purchaseBenefits) p.purchaseBenefits = {};
+    if (!Array.isArray(p.purchaseBenefits.items)) {
+      const seed: AnyObj[] = [];
+      if (p.purchaseBenefits.gifts) seed.push({ icon: 'Gift', text: p.purchaseBenefits.gifts });
+      if (p.purchaseBenefits.games) seed.push({ icon: 'Gamepad2', text: p.purchaseBenefits.games });
+      if (p.purchaseBenefits.tv) seed.push({ icon: 'Tv', text: p.purchaseBenefits.tv });
+      p.purchaseBenefits.items = seed;
+    }
+    return p.purchaseBenefits.items as AnyObj[];
+  };
+
+  const setItems = (mut: (arr: AnyObj[]) => void) =>
+    setP((p) => {
+      const arr = ensureItems(p);
+      mut(arr);
+      const get = (icon: string) => arr.find((it) => it?.icon === icon)?.text || '';
+      p.purchaseBenefits.gifts = get('Gift');
+      p.purchaseBenefits.games = get('Gamepad2');
+      p.purchaseBenefits.tv = get('Tv');
+    });
+
+  return (
+    <>
+      <p className="text-sm text-slate-600 -mt-2">
+        Edita las líneas con icono que aparecen en la ficha del producto debajo del countdown.
+        Acepta HTML básico (<code>&lt;strong&gt;</code>, <code>&lt;b&gt;</code>) en el texto.
+      </p>
+
+      <div className="space-y-3">
+        {items.map((it, i) => (
+          <div
+            key={i}
+            className="border-2 rounded-lg p-3 bg-slate-50 grid grid-cols-1 md:grid-cols-[200px_1fr_auto] gap-3 items-end"
+            data-testid={`purchase-benefit-row-${i}`}
+          >
+            <Field label="Icono">
+              <select
+                value={it.icon || 'Gift'}
+                onChange={(e) => setItems((arr) => (arr[i].icon = e.target.value))}
+                className="w-full border rounded px-3 py-2 text-sm"
+                data-testid={`purchase-benefit-icon-${i}`}
+              >
+                {PURCHASE_BENEFIT_ICON_OPTIONS.map((name) => (
+                  <option key={name} value={name}>
+                    {name}
+                  </option>
+                ))}
+              </select>
+            </Field>
+            <Field label="Texto (acepta HTML)">
+              <Text
+                value={it.text || ''}
+                onChange={(v) => setItems((arr) => (arr[i].text = v))}
+                testid={`purchase-benefit-text-${i}`}
+              />
+            </Field>
+            <div className="flex items-center gap-1">
+              <button
+                type="button"
+                disabled={i === 0}
+                onClick={() =>
+                  setItems((arr) => {
+                    [arr[i - 1], arr[i]] = [arr[i], arr[i - 1]];
+                  })
+                }
+                className="text-xs px-2 py-1 border rounded bg-white hover:bg-slate-100 disabled:opacity-30 disabled:cursor-not-allowed"
+                aria-label="Subir"
+              >
+                ↑
+              </button>
+              <button
+                type="button"
+                disabled={i === items.length - 1}
+                onClick={() =>
+                  setItems((arr) => {
+                    [arr[i + 1], arr[i]] = [arr[i], arr[i + 1]];
+                  })
+                }
+                className="text-xs px-2 py-1 border rounded bg-white hover:bg-slate-100 disabled:opacity-30 disabled:cursor-not-allowed"
+                aria-label="Bajar"
+              >
+                ↓
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  if (!confirm('¿Eliminar este beneficio?')) return;
+                  setItems((arr) => arr.splice(i, 1));
+                }}
+                className="text-xs px-2 py-1 border border-red-300 text-red-700 rounded bg-white hover:bg-red-50"
+                data-testid={`delete-purchase-benefit-${i}`}
+              >
+                Eliminar
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <AddBtn
+        onClick={() =>
+          setItems((arr) =>
+            arr.push({
+              icon: 'Sparkles',
+              text: '<strong>Nuevo beneficio</strong>',
+            })
+          )
+        }
+      >
+        + Añadir beneficio
+      </AddBtn>
+    </>
+  );
+}
+
+/* ---------- Upsells editor (per-product cart upsells) ---------- */
+
+function UpsellsEditor({
+  product,
+  setP,
+  allProducts,
+  editingIndex,
+  sc,
+}: {
+  product: AnyObj;
+  setP: (mut: (p: AnyObj) => void) => void;
+  allProducts: AnyObj[];
+  editingIndex: number;
+  sc: AnyObj;
+}) {
+  const upsells: AnyObj[] = Array.isArray(product.upsells) ? product.upsells : [];
+  const isConfigured = Array.isArray(product.upsells);
+  const others = allProducts.filter((_, i) => i !== editingIndex);
+
+  const ensureUpsells = (p: AnyObj) => {
+    if (!Array.isArray(p.upsells)) p.upsells = [];
+    return p.upsells as AnyObj[];
+  };
+
+  const setUpsells = (mut: (arr: AnyObj[]) => void) =>
+    setP((p) => {
+      const arr = ensureUpsells(p);
+      mut(arr);
+    });
+
+  const initWithCommunity = () => {
+    const communitySection = sc?.homePage?.communitySection || {};
+    setP((p) => {
+      p.upsells = [
+        {
+          id: `upsell-${Date.now()}`,
+          enabled: true,
+          name: '1 Año de Acceso a la Comunidad',
+          image: communitySection.cartImage || '/images/aa.png',
+          price: 0,
+          label: 'GRATIS',
+        },
+      ];
+    });
+  };
+
+  const initEmpty = () => {
+    setP((p) => {
+      p.upsells = [];
+    });
+  };
+
+  const addCustomUpsell = () => {
+    setUpsells((arr) =>
+      arr.push({
+        id: `upsell-${Date.now()}`,
+        enabled: true,
+        name: 'Nuevo upsell',
+        image: '/images/aa.png',
+        price: 0,
+        label: 'GRATIS',
+      })
+    );
+  };
+
+  const addUpsellFromProduct = (slug: string) => {
+    const src = others.find((o) => o.slug === slug);
+    if (!src) return;
+    const variant = (src.variants || []).find((v: AnyObj) => v.isBestSeller) || src.variants?.[0] || {};
+    setUpsells((arr) =>
+      arr.push({
+        id: `upsell-${Date.now()}`,
+        enabled: true,
+        name: src.name,
+        image: src.cartImage || src.images?.[0]?.src || '/images/aa.png',
+        price: typeof variant.price === 'number' ? variant.price : 0,
+        label: '',
+        sourceProductSlug: src.slug,
+      })
+    );
+  };
+
+  if (!isConfigured) {
+    return (
+      <Section title="🎁 Upsells del carrito (por producto)">
+        <p className="text-sm text-slate-600 -mt-2">
+          Por ahora este producto usa el upsell global por defecto (
+          <strong>1 Año de Acceso a la Comunidad</strong> gratis), que se añade automáticamente al
+          carrito al meter este producto. Si quieres editar el texto/imagen, añadir más upsells, o
+          desactivarlo solo en este producto, configúralo aquí abajo.
+        </p>
+        <div className="flex flex-wrap gap-2 mt-2">
+          <button
+            type="button"
+            onClick={initWithCommunity}
+            className="bg-blue-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-blue-700"
+            data-testid="upsells-init-with-community"
+          >
+            Configurar upsells (partir del actual)
+          </button>
+          <button
+            type="button"
+            onClick={initEmpty}
+            className="bg-slate-200 hover:bg-slate-300 px-4 py-2 rounded text-sm font-medium"
+            data-testid="upsells-init-empty"
+          >
+            Configurar sin ningún upsell
+          </button>
+        </div>
+      </Section>
+    );
+  }
+
+  return (
+    <Section title={`🎁 Upsells del carrito (${upsells.length})`}>
+      <p className="text-sm text-slate-600 -mt-2">
+        Estos extras se añaden automáticamente al carrito cuando un cliente compra este producto.
+        Puedes desactivarlos individualmente, editar el texto, la imagen y el precio (0 € = gratis),
+        o usar otro producto como upsell.
+      </p>
+
+      <div className="space-y-3">
+        {upsells.map((u, i) => (
+          <div
+            key={i}
+            className="border-2 rounded-lg p-4 bg-slate-50 space-y-3"
+            data-testid={`upsell-row-${i}`}
+          >
+            <div className="flex items-center justify-between gap-3 flex-wrap">
+              <label className="flex items-center gap-2 text-sm font-medium">
+                <input
+                  type="checkbox"
+                  checked={u.enabled !== false}
+                  onChange={(e) => setUpsells((arr) => (arr[i].enabled = e.target.checked))}
+                  data-testid={`upsell-enabled-${i}`}
+                />
+                Activo (se añade automáticamente al carrito)
+              </label>
+              <div className="flex items-center gap-1">
+                <button
+                  type="button"
+                  disabled={i === 0}
+                  onClick={() =>
+                    setUpsells((arr) => {
+                      [arr[i - 1], arr[i]] = [arr[i], arr[i - 1]];
+                    })
+                  }
+                  className="text-xs px-2 py-1 border rounded bg-white hover:bg-slate-100 disabled:opacity-30 disabled:cursor-not-allowed"
+                  aria-label="Subir"
+                >
+                  ↑
+                </button>
+                <button
+                  type="button"
+                  disabled={i === upsells.length - 1}
+                  onClick={() =>
+                    setUpsells((arr) => {
+                      [arr[i + 1], arr[i]] = [arr[i], arr[i + 1]];
+                    })
+                  }
+                  className="text-xs px-2 py-1 border rounded bg-white hover:bg-slate-100 disabled:opacity-30 disabled:cursor-not-allowed"
+                  aria-label="Bajar"
+                >
+                  ↓
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (!confirm('¿Eliminar este upsell?')) return;
+                    setUpsells((arr) => arr.splice(i, 1));
+                  }}
+                  className="text-xs px-2 py-1 border border-red-300 text-red-700 rounded bg-white hover:bg-red-50"
+                  data-testid={`delete-upsell-${i}`}
+                >
+                  Eliminar
+                </button>
+              </div>
+            </div>
+
+            <Field label="Nombre (lo que verá el cliente en el carrito)">
+              <Text
+                value={u.name || ''}
+                onChange={(v) => setUpsells((arr) => (arr[i].name = v))}
+                testid={`upsell-name-${i}`}
+              />
+            </Field>
+
+            <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-3">
+              <Field label="Imagen">
+                <ImagePicker
+                  value={u.image || ''}
+                  onChange={(v) => setUpsells((arr) => (arr[i].image = v))}
+                />
+              </Field>
+              <Field label="Precio € (0 = GRATIS)">
+                <Num
+                  value={typeof u.price === 'number' ? u.price : 0}
+                  onChange={(v) => setUpsells((arr) => (arr[i].price = v))}
+                  testid={`upsell-price-${i}`}
+                />
+              </Field>
+              <Field label="Etiqueta (badge en el carrito)">
+                <Text
+                  value={u.label || ''}
+                  onChange={(v) => setUpsells((arr) => (arr[i].label = v))}
+                  testid={`upsell-label-${i}`}
+                />
+              </Field>
+            </div>
+
+            {u.sourceProductSlug && (
+              <p className="text-[11px] text-slate-500">
+                Vinculado al producto <code>/producto/{u.sourceProductSlug}</code>
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div className="flex flex-wrap gap-2 mt-3">
+        <button
+          type="button"
+          onClick={addCustomUpsell}
+          className="bg-slate-200 hover:bg-slate-300 px-4 py-2 rounded text-sm font-medium"
+          data-testid="add-custom-upsell"
+        >
+          + Añadir upsell personalizado
+        </button>
+
+        {others.length > 0 && (
+          <div className="inline-flex items-stretch border rounded overflow-hidden">
+            <select
+              id={`add-upsell-from-product-${editingIndex}`}
+              defaultValue=""
+              className="px-3 py-2 text-sm bg-white border-r"
+              data-testid="add-upsell-from-product-select"
+              onChange={(e) => {
+                const v = e.target.value;
+                if (!v) return;
+                addUpsellFromProduct(v);
+                e.target.value = '';
+              }}
+            >
+              <option value="">+ Añadir otro producto como upsell…</option>
+              {others.map((o) => (
+                <option key={o.slug} value={o.slug}>
+                  {o.name}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+      </div>
+
+      <div className="mt-3 text-[11px] text-amber-700 bg-amber-50 border border-amber-200 rounded p-2">
+        ⚠️ Estos upsells solo se añaden si el carrito estaba vacío justo antes de añadir este
+        producto (mismo comportamiento del upsell original). Esto evita duplicados cuando el
+        cliente añade varios productos.
+      </div>
+    </Section>
+  );
+}
+
+
+
+
+
+
 
 function MenuTab({ sc, update }: { sc: AnyObj; update: (fn: (d: AnyObj) => void) => void }) {
   const menu: AnyObj[] = sc.menu || [];

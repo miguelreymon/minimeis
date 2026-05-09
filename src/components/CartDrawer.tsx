@@ -89,9 +89,11 @@ export function CartDrawer() {
                           {item.color}
                         </Badge>
                       )}
-                       <p className="text-sm font-semibold mt-1">
-                        {item.price > 0 ? `${item.price.toFixed(0)}€` : 'Gratis'}
-                      </p>
+                       {item.price > 0 && (
+                         <p className="text-sm font-semibold mt-1">
+                           {`${item.price.toFixed(0)}€`}
+                         </p>
+                       )}
                       {!item.isUpsell && (
                         <div className="flex items-center space-x-2 mt-2">
                           <Button

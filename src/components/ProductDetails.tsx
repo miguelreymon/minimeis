@@ -19,6 +19,28 @@ import {
   Tv,
   Users,
   AlertTriangle,
+  Sparkles,
+  Star,
+  Trophy,
+  Heart,
+  Zap,
+  Wifi,
+  Headphones,
+  Music,
+  Video,
+  BatteryFull,
+  Plug,
+  Cpu,
+  Award,
+  BadgeCheck,
+  Lock,
+  Flame,
+  Rocket,
+  Crown,
+  CheckCircle2,
+  Gauge,
+  Smile,
+  type LucideIcon,
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import ProductInfoAccordion from './ProductInfoAccordion';
@@ -118,23 +140,83 @@ function CountdownTimer({ offer }: { offer: Product['countdownOffer'] }) {
   );
 }
 
-function PurchaseBenefits() {
-    const benefits = [
-        { icon: Gift, text: "<strong class='text-foreground'>Regalos GRATIS</strong>" },
-        { icon: Gamepad2, text: "<strong class='text-foreground'>Todos los juegos preinstalados</strong>" },
-        { icon: Tv, text: "<strong class='text-foreground'>Funciona con cualquier TV</strong>" },
-    ];
+const PURCHASE_BENEFIT_ICONS: Record<string, LucideIcon> = {
+  Gift,
+  Gamepad2,
+  Tv,
+  ShieldCheck,
+  Truck,
+  Package,
+  Users,
+  Sparkles,
+  Star,
+  Trophy,
+  Heart,
+  Zap,
+  Wifi,
+  Headphones,
+  Music,
+  Video,
+  BatteryFull,
+  Plug,
+  Cpu,
+  Award,
+  BadgeCheck,
+  Lock,
+  Flame,
+  Rocket,
+  Crown,
+  CheckCircle2,
+  Gauge,
+  Smile,
+};
 
-    return (
-        <div className="space-y-3 my-6">
-            {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                    <benefit.icon className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <p className="text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: benefit.text }} />
-                </div>
-            ))}
-        </div>
-    );
+type BenefitItem = { icon: string; text: string };
+
+function deriveBenefits(pb: any): BenefitItem[] {
+  if (!pb) return [];
+  // New format: explicit list of items.
+  if (Array.isArray(pb.items)) {
+    return pb.items
+      .filter((it: any) => it && (it.text || '').trim().length > 0)
+      .map((it: any) => ({ icon: it.icon || 'Gift', text: it.text }));
+  }
+  // Legacy format: { gifts, games, tv } strings -> map to default icons.
+  const legacy: BenefitItem[] = [];
+  if (pb.gifts) legacy.push({ icon: 'Gift', text: pb.gifts });
+  if (pb.games) legacy.push({ icon: 'Gamepad2', text: pb.games });
+  if (pb.tv) legacy.push({ icon: 'Tv', text: pb.tv });
+  return legacy;
+}
+
+function PurchaseBenefits({ benefits }: { benefits: BenefitItem[] }) {
+  const items =
+    benefits.length > 0
+      ? benefits
+      : [
+          { icon: 'Gift', text: "<strong class='text-foreground'>Regalos GRATIS</strong>" },
+          { icon: 'Gamepad2', text: "<strong class='text-foreground'>Todos los juegos preinstalados</strong>" },
+          { icon: 'Tv', text: "<strong class='text-foreground'>Funciona con cualquier TV</strong>" },
+        ];
+
+  if (items.length === 0) return null;
+
+  return (
+    <div className="space-y-3 my-6">
+      {items.map((benefit, index) => {
+        const Icon = PURCHASE_BENEFIT_ICONS[benefit.icon] || Gift;
+        return (
+          <div key={index} className="flex items-start gap-3" data-testid={`purchase-benefit-${index}`}>
+            <Icon className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+            <p
+              className="text-sm text-muted-foreground"
+              dangerouslySetInnerHTML={{ __html: benefit.text }}
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 
@@ -184,7 +266,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
       quantity: 1,
       image: product.cartImage,
       color: colorName,
-    });
+    }, (product as any).upsells);
     setIsCartOpen(true);
   };
 
@@ -267,7 +349,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
 
       <CountdownTimer offer={product.countdownOffer} />
 
-      <PurchaseBenefits />
+      <PurchaseBenefits benefits={deriveBenefits((product as any).purchaseBenefits)} />
 
       {!product.hideVariantSelector && (
       <div>
@@ -468,7 +550,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
       </div>
 
       <div className="!mt-0">
-        <CustomerReviewsCarousel />
+        <CustomerReviewsCarousel section={(product as any).customerReviewsCarouselSection} />
       </div>
 
       {/* Sticky Add to Cart Bar */}
