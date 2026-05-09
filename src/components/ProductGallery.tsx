@@ -19,13 +19,13 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
   const siteContent = config || defaultContent;
 
   if (!images || images.length === 0) {
-    return <div className="aspect-square w-full bg-muted rounded-lg flex items-center justify-center">No hay imágenes disponibles</div>;
+    return <div className="aspect-[4/5] w-full bg-muted rounded-lg flex items-center justify-center">No hay imágenes disponibles</div>;
   }
 
   return (
     <div className="flex flex-col gap-4">
       <div className="relative">
-        <div className="aspect-square w-full overflow-hidden rounded-lg shadow-lg">
+        <div className="aspect-[4/5] w-full overflow-hidden rounded-lg shadow-lg">
           <Image
             src={getImage(images[selectedImage].src)}
             alt={images[selectedImage].alt}

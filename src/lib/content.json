@@ -107,6 +107,24 @@
               "src": "/images/foto10.webp",
               "alt": "Colección de juegos retro",
               "hint": "retro games"
+            },
+            {
+              "id": "img-1778324482724",
+              "src": "/images/producto1.webp",
+              "alt": "",
+              "hint": ""
+            },
+            {
+              "id": "img-1778324492957",
+              "src": "/images/producto11.webp",
+              "alt": "",
+              "hint": ""
+            },
+            {
+              "id": "img-1778324497317",
+              "src": "/images/producto6.webp",
+              "alt": "",
+              "hint": ""
             }
           ],
           "whatsInTheBox": [
@@ -888,6 +906,24 @@
             "src": "/images/foto10.webp",
             "alt": "Colección de juegos retro",
             "hint": "retro games"
+          },
+          {
+            "id": "img-1778324482724",
+            "src": "/images/producto1.webp",
+            "alt": "",
+            "hint": ""
+          },
+          {
+            "id": "img-1778324492957",
+            "src": "/images/producto11.webp",
+            "alt": "",
+            "hint": ""
+          },
+          {
+            "id": "img-1778324497317",
+            "src": "/images/producto6.webp",
+            "alt": "",
+            "hint": ""
           }
         ],
         "whatsInTheBox": [
