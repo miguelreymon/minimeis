@@ -51,10 +51,14 @@ const workSans = Work_Sans({
   preload: false,
 });
 
-export const metadata: Metadata = {
-  title: 'Game Over',
-  description: 'Consola Gameover®',
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const config = (await getContent()) || defaultContent;
+  const brandName = config?.footer?.brandName || 'Game Over';
+  return {
+    title: brandName,
+    description: `Consola ${brandName}®`,
+  };
+}
 
 export default async function RootLayout({
   children,

@@ -22,7 +22,7 @@ export function Footer() {
     return null;
   }
 
-  const { brandSlogan, subscriptionTitle, subscriptionSlogan, policyLinks, socialLinks } = siteContent.footer;
+  const { brandSlogan, subscriptionTitle, subscriptionSlogan, policyLinks, socialLinks, copyrightText } = siteContent.footer;
   
   return (
     <footer className="bg-primary">
@@ -86,7 +86,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-primary-foreground/20 flex flex-col md:flex-row justify-between items-center text-sm text-current/80">
-          <p>&copy; 2025 Consolas Gameover. Todos los derechos reservados.</p>
+          <p>{copyrightText || `© ${new Date().getFullYear()} Consolas ${siteContent.footer.brandName || 'Gameover'}. Todos los derechos reservados.`}</p>
           <div className="flex items-center space-x-4 mt-4 md:mt-0">
             {socialLinks.map(link => {
                 const Icon = icons[link.icon];

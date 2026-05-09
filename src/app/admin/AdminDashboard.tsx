@@ -242,7 +242,7 @@ function FooterTab({ sc, update }: { sc: AnyObj; update: (fn: (d: AnyObj) => voi
   return (
     <>
       <Section title="Marca y contacto">
-        <Field label="Nombre de la marca">
+        <Field label="Nombre de la marca (también aparece en la pestaña del navegador)">
           <Text
             value={f.brandName}
             onChange={(v) => update((d) => (d.siteContent.footer.brandName = v))}
@@ -252,6 +252,12 @@ function FooterTab({ sc, update }: { sc: AnyObj; update: (fn: (d: AnyObj) => voi
           <Text
             value={f.brandSlogan}
             onChange={(v) => update((d) => (d.siteContent.footer.brandSlogan = v))}
+          />
+        </Field>
+        <Field label="Texto de copyright (footer)">
+          <Text
+            value={f.copyrightText || ''}
+            onChange={(v) => update((d) => (d.siteContent.footer.copyrightText = v))}
           />
         </Field>
         <Field label="Número de WhatsApp (solo dígitos)">
