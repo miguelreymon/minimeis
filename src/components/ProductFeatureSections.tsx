@@ -93,7 +93,7 @@ function Section({ data, reverse, priority }: { data: FeatureSection; reverse?: 
 
           {/* Imagen / Vídeo */}
           {src && (
-            <div className="relative aspect-[6/5] w-full rounded-2xl overflow-hidden bg-slate-100">
+            <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-slate-100">
               <FeatureMedia src={src} alt={data.title || 'Imagen destacada'} priority={priority} />
             </div>
           )}
