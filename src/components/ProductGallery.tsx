@@ -50,14 +50,14 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
         </div>
       </div>
 
-      <div className="grid grid-cols-5 gap-2">
+      <div className="flex gap-2 overflow-x-auto snap-x snap-mandatory pb-1 -mx-1 px-1 [scrollbar-width:thin]">
         {images.map((image, index) => (
           <button
             key={image.id}
             onClick={() => setSelectedImage(index)}
             className={cn(
-              'aspect-square relative w-full overflow-hidden rounded-md transition-opacity focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
-              selectedImage === index ? 'opacity-100' : 'opacity-60 hover:opacity-100'
+              'aspect-square relative shrink-0 w-20 sm:w-24 overflow-hidden rounded-md snap-start transition-opacity focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+              selectedImage === index ? 'opacity-100 ring-2 ring-primary' : 'opacity-60 hover:opacity-100'
             )}
           >
             <Image
@@ -65,7 +65,7 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
               alt={image.alt}
               fill
               className="object-cover"
-              sizes="(max-width: 640px) 80px, 120px"
+              sizes="(max-width: 640px) 80px, 96px"
               data-ai-hint={image.hint}
               loading="lazy"
               quality={70}
