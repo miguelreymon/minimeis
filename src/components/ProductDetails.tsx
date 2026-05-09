@@ -489,7 +489,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
         </Button>
       </div>
 
-      <div className="!mt-0 !mb-0 py-0">
+      <div className="mt-8 mb-2">
         <div className="flex items-center justify-between relative max-w-sm mx-auto">
           {/* Timeline Line */}
           <div className="absolute top-[26px] left-[15%] right-[15%] h-[1px] bg-gray-200 -z-0" />
@@ -533,7 +533,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
         </div>
       </div>
 
-      <div className="!mt-0 py-2">
+      <div className="mt-8 py-2">
         <Image 
           src={getImage(product.paymentGatewaysImage || '/images/bizum5.webp')}
           alt="Pagos seguros con Bizum" 
@@ -545,11 +545,11 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
         />
       </div>
 
-      <div className="!mt-0">
+      <div className="mt-6">
         <ProductInfoAccordion productInfo={product.productInfoAccordion} />
       </div>
 
-      <div className="!mt-0">
+      <div className="mt-6">
         <CustomerReviewsCarousel section={(product as any).customerReviewsCarouselSection} />
       </div>
 
