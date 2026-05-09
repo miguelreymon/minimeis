@@ -16,7 +16,7 @@
   "siteContent": {
     "header": {
       "logo": "/images/Group_150x_2x.avif",
-      "announcementBar": "🤍​ LIQUIDACION DE STOCK. SOLO HOY –40 % DTO Y ENVIO GRATIS 🤍"
+      "announcementBar": "🤍​ LIQUIDACION DE STOCK. SOLO HOY –45 % DTO Y ENVIO GRATIS 🤍"
     },
     "footer": {
       "brandName": "Minimeis",
@@ -81,13 +81,13 @@
           "images": [
             {
               "id": "gallery-main",
-              "src": "/images/foto7.webp",
+              "src": "/images/foto6.webp",
               "alt": "Consola Gameover con mandos",
               "hint": "retro console"
             },
             {
               "id": "gallery-2",
-              "src": "/images/foto6.webp",
+              "src": "/images/foto7.webp",
               "alt": "Consola en un setup de gaming",
               "hint": "gaming setup"
             },
@@ -126,6 +126,12 @@
               "src": "/images/producto6.webp",
               "alt": "",
               "hint": ""
+            },
+            {
+              "id": "img-1778341080252",
+              "src": "/images/aa.png",
+              "alt": "",
+              "hint": ""
             }
           ],
           "whatsInTheBox": [
@@ -156,13 +162,13 @@
           },
           "distributorBadge": "Distribuidor oficial en España y Europa",
           "purchaseBenefits": {
-            "gifts": "Plug & Play en 30 segundos.",
+            "gifts": "",
             "games": "",
             "tv": "",
             "items": [
               {
-                "icon": "Gift",
-                "text": "Plug & Play en 30 segundos."
+                "icon": "Smile",
+                "text": "De 6 meses a 4 años (máx. 18kg)"
               },
               {
                 "icon": "Lock",
@@ -179,18 +185,18 @@
               "label": "COLOR",
               "options": [
                 {
-                  "id": "black",
-                  "name": "Negro",
+                  "id": "blue",
+                  "name": "Blue Premium",
                   "image": "/images/producto1.webp"
                 },
                 {
-                  "id": "blue",
-                  "name": "Azul",
+                  "id": "sand",
+                  "name": "Sand Premium",
                   "image": "/images/producto11.webp"
                 },
                 {
-                  "id": "nuevo",
-                  "name": "Nuevo",
+                  "id": "olive",
+                  "name": "Olive Premium",
                   "image": "/images/producto6.webp"
                 }
               ]
@@ -199,37 +205,65 @@
           "slug": "portabebes",
           "shortDescription": "Como padres, conocemos la emoción de ver el rostro de nuestro hijo iluminarse de alegría cuando lo levantan en hombros.",
           "featureSection1": {
-            "title": "🎮 Las consolas retro están de moda.",
+            "title": "EL VIAJE MÁS GENIAL DEL MUNDO",
             "paragraphs": [
-              "Gameover te da la libertad de jugar a los shooters arcade como se concibieron originalmente: sin cables que te limiten ni distracciones que interrumpan la experiencia. Es totalmente inalámbrico , sensible y está diseñado para que te resulte natural en las manos. Te mueves con libertad, apuntas instintivamente y mantienes la puntería. Cada disparo pone a prueba tu habilidad, ofreciendo una experiencia de tiro totalmente inmersiva que recompensa la precisión y el control."
+              "Como padres, conocemos la emoción de ver el rostro de nuestro hijo iluminarse de alegría cuando lo levantan en hombros.",
+              "Por eso creamos MiniMeis, para que los niños puedan disfrutar de esa misma increíble perspectiva y cercanía, pero con la comodidad y seguridad adicionales de un portabebés de hombro galardonado.",
+              "Así que abróchese el cinturón y prepare a su hijo para el despegue. Creemos recuerdos juntos, con manos libres, en cada paso del camino.",
+              "Tarjei Johnson con su familia, cofundador de MiniMeis."
             ],
             "listItems": [],
-            "imageSrc": "/images/minimeisfoto.webp"
+            "imageSrc": "/images/foto4.webp"
           },
           "featureSection2": {
-            "title": "✅​ Sincronización del retroceso",
+            "title": "VIAJAR ALTO EN COMODIDAD Y ESTILO",
             "paragraphs": [
-              "Hemos creado un programa específico de sincronización de retroceso para Retro Gun . Sincroniza el retroceso y la vibración con la acción en pantalla. Ajusta la respuesta para que las pistolas, las escopetas y las ametralladoras tengan cada una su propia potencia y velocidad de retroceso , de modo que realmente se siente como si estuvieras sosteniendo un arma diferente. Sin munición, no hay retroceso. Recargar produce una vibración perceptible. Compatible con MameHooker, QmameHooker, Hook of the Reaper y DemulShooter para una retroalimentación precisa y adaptada al juego."
+              "Se proporciona comodidad para los padres colocando al niño en un arco especialmente diseñado, aliviando el cuello y los hombros del estrés directo.",
+              "El peso del niño se distribuye uniformemente a través del cuerpo del portabebé, lo que permite paseos más largos con comodidad y estilo, ¡con niños felices!"
             ],
             "listItems": [],
-            "imageSrc": "/images/minimeis2.mp4"
+            "imageSrc": "/images/foto13.webp"
           },
           "featureSections": [
             {
-              "title": "🎮 Las consolas retro están de moda.",
+              "title": "EL VIAJE MÁS GENIAL DEL MUNDO",
               "paragraphs": [
-                "Gameover te da la libertad de jugar a los shooters arcade como se concibieron originalmente: sin cables que te limiten ni distracciones que interrumpan la experiencia. Es totalmente inalámbrico , sensible y está diseñado para que te resulte natural en las manos. Te mueves con libertad, apuntas instintivamente y mantienes la puntería. Cada disparo pone a prueba tu habilidad, ofreciendo una experiencia de tiro totalmente inmersiva que recompensa la precisión y el control."
+                "Como padres, conocemos la emoción de ver el rostro de nuestro hijo iluminarse de alegría cuando lo levantan en hombros.",
+                "Por eso creamos MiniMeis, para que los niños puedan disfrutar de esa misma increíble perspectiva y cercanía, pero con la comodidad y seguridad adicionales de un portabebés de hombro galardonado.",
+                "Así que abróchese el cinturón y prepare a su hijo para el despegue. Creemos recuerdos juntos, con manos libres, en cada paso del camino.",
+                "Tarjei Johnson con su familia, cofundador de MiniMeis."
               ],
               "listItems": [],
-              "imageSrc": "/images/minimeisfoto.webp"
+              "imageSrc": "/images/foto4.webp"
             },
             {
-              "title": "✅​ Sincronización del retroceso",
+              "title": "VIAJAR ALTO EN COMODIDAD Y ESTILO",
               "paragraphs": [
-                "Hemos creado un programa específico de sincronización de retroceso para Retro Gun . Sincroniza el retroceso y la vibración con la acción en pantalla. Ajusta la respuesta para que las pistolas, las escopetas y las ametralladoras tengan cada una su propia potencia y velocidad de retroceso , de modo que realmente se siente como si estuvieras sosteniendo un arma diferente. Sin munición, no hay retroceso. Recargar produce una vibración perceptible. Compatible con MameHooker, QmameHooker, Hook of the Reaper y DemulShooter para una retroalimentación precisa y adaptada al juego."
+                "Se proporciona comodidad para los padres colocando al niño en un arco especialmente diseñado, aliviando el cuello y los hombros del estrés directo.",
+                "El peso del niño se distribuye uniformemente a través del cuerpo del portabebé, lo que permite paseos más largos con comodidad y estilo, ¡con niños felices!"
+              ],
+              "listItems": [],
+              "imageSrc": "/images/foto13.webp"
+            },
+            {
+              "title": "PREPARARSE ES MUY FÁCIL",
+              "paragraphs": [
+                "¡El nuevo MiniMeis G5 te equipa en segundos!",
+                "Simplemente despliegue el portabebés, colóquelo sobre los hombros y abroche las hebillas. Levante a su hijo en el asiento y asegúrelo con el cinturón y las correas para las piernas.",
+                "Tanto si prefieres la impresión como la pantalla, hemos creado guías prácticas sencillas para que no tengas dudas. Échales un vistazo."
               ],
               "listItems": [],
               "imageSrc": "/images/minimeis2.mp4"
+            },
+            {
+              "title": "EXPLORADORES SEGUROS Y FELICES",
+              "paragraphs": [
+                "Mientras descubre el mundo, su hijo se sienta seguro sobre sus hombros, sujeto por un cinturón y correas para las piernas. Ambos con elegantes detalles de piel sintética.",
+                "Se incluye una correa para el hombro para brindar soporte adicional en la parte superior del cuerpo para los niños más pequeños (6 a 10 meses).",
+                "El asiento acolchado y el respaldo flexible proporcionan la máxima comodidad mientras disfruta de la vista desde arriba."
+              ],
+              "listItems": [],
+              "imageSrc": "/images/foto5.webp"
             }
           ],
           "hideVariantSelector": true,
@@ -881,13 +915,13 @@
         "images": [
           {
             "id": "gallery-main",
-            "src": "/images/foto7.webp",
+            "src": "/images/foto6.webp",
             "alt": "Consola Gameover con mandos",
             "hint": "retro console"
           },
           {
             "id": "gallery-2",
-            "src": "/images/foto6.webp",
+            "src": "/images/foto7.webp",
             "alt": "Consola en un setup de gaming",
             "hint": "gaming setup"
           },
@@ -926,6 +960,12 @@
             "src": "/images/producto6.webp",
             "alt": "",
             "hint": ""
+          },
+          {
+            "id": "img-1778341080252",
+            "src": "/images/aa.png",
+            "alt": "",
+            "hint": ""
           }
         ],
         "whatsInTheBox": [
@@ -956,13 +996,13 @@
         },
         "distributorBadge": "Distribuidor oficial en España y Europa",
         "purchaseBenefits": {
-          "gifts": "Plug & Play en 30 segundos.",
+          "gifts": "",
           "games": "",
           "tv": "",
           "items": [
             {
-              "icon": "Gift",
-              "text": "Plug & Play en 30 segundos."
+              "icon": "Smile",
+              "text": "De 6 meses a 4 años (máx. 18kg)"
             },
             {
               "icon": "Lock",
@@ -979,18 +1019,18 @@
             "label": "COLOR",
             "options": [
               {
-                "id": "black",
-                "name": "Negro",
+                "id": "blue",
+                "name": "Blue Premium",
                 "image": "/images/producto1.webp"
               },
               {
-                "id": "blue",
-                "name": "Azul",
+                "id": "sand",
+                "name": "Sand Premium",
                 "image": "/images/producto11.webp"
               },
               {
-                "id": "nuevo",
-                "name": "Nuevo",
+                "id": "olive",
+                "name": "Olive Premium",
                 "image": "/images/producto6.webp"
               }
             ]
@@ -999,37 +1039,65 @@
         "slug": "portabebes",
         "shortDescription": "Como padres, conocemos la emoción de ver el rostro de nuestro hijo iluminarse de alegría cuando lo levantan en hombros.",
         "featureSection1": {
-          "title": "🎮 Las consolas retro están de moda.",
+          "title": "EL VIAJE MÁS GENIAL DEL MUNDO",
           "paragraphs": [
-            "Gameover te da la libertad de jugar a los shooters arcade como se concibieron originalmente: sin cables que te limiten ni distracciones que interrumpan la experiencia. Es totalmente inalámbrico , sensible y está diseñado para que te resulte natural en las manos. Te mueves con libertad, apuntas instintivamente y mantienes la puntería. Cada disparo pone a prueba tu habilidad, ofreciendo una experiencia de tiro totalmente inmersiva que recompensa la precisión y el control."
+            "Como padres, conocemos la emoción de ver el rostro de nuestro hijo iluminarse de alegría cuando lo levantan en hombros.",
+            "Por eso creamos MiniMeis, para que los niños puedan disfrutar de esa misma increíble perspectiva y cercanía, pero con la comodidad y seguridad adicionales de un portabebés de hombro galardonado.",
+            "Así que abróchese el cinturón y prepare a su hijo para el despegue. Creemos recuerdos juntos, con manos libres, en cada paso del camino.",
+            "Tarjei Johnson con su familia, cofundador de MiniMeis."
           ],
           "listItems": [],
-          "imageSrc": "/images/minimeisfoto.webp"
+          "imageSrc": "/images/foto4.webp"
         },
         "featureSection2": {
-          "title": "✅​ Sincronización del retroceso",
+          "title": "VIAJAR ALTO EN COMODIDAD Y ESTILO",
           "paragraphs": [
-            "Hemos creado un programa específico de sincronización de retroceso para Retro Gun . Sincroniza el retroceso y la vibración con la acción en pantalla. Ajusta la respuesta para que las pistolas, las escopetas y las ametralladoras tengan cada una su propia potencia y velocidad de retroceso , de modo que realmente se siente como si estuvieras sosteniendo un arma diferente. Sin munición, no hay retroceso. Recargar produce una vibración perceptible. Compatible con MameHooker, QmameHooker, Hook of the Reaper y DemulShooter para una retroalimentación precisa y adaptada al juego."
+            "Se proporciona comodidad para los padres colocando al niño en un arco especialmente diseñado, aliviando el cuello y los hombros del estrés directo.",
+            "El peso del niño se distribuye uniformemente a través del cuerpo del portabebé, lo que permite paseos más largos con comodidad y estilo, ¡con niños felices!"
           ],
           "listItems": [],
-          "imageSrc": "/images/minimeis2.mp4"
+          "imageSrc": "/images/foto13.webp"
         },
         "featureSections": [
           {
-            "title": "🎮 Las consolas retro están de moda.",
+            "title": "EL VIAJE MÁS GENIAL DEL MUNDO",
             "paragraphs": [
-              "Gameover te da la libertad de jugar a los shooters arcade como se concibieron originalmente: sin cables que te limiten ni distracciones que interrumpan la experiencia. Es totalmente inalámbrico , sensible y está diseñado para que te resulte natural en las manos. Te mueves con libertad, apuntas instintivamente y mantienes la puntería. Cada disparo pone a prueba tu habilidad, ofreciendo una experiencia de tiro totalmente inmersiva que recompensa la precisión y el control."
+              "Como padres, conocemos la emoción de ver el rostro de nuestro hijo iluminarse de alegría cuando lo levantan en hombros.",
+              "Por eso creamos MiniMeis, para que los niños puedan disfrutar de esa misma increíble perspectiva y cercanía, pero con la comodidad y seguridad adicionales de un portabebés de hombro galardonado.",
+              "Así que abróchese el cinturón y prepare a su hijo para el despegue. Creemos recuerdos juntos, con manos libres, en cada paso del camino.",
+              "Tarjei Johnson con su familia, cofundador de MiniMeis."
             ],
             "listItems": [],
-            "imageSrc": "/images/minimeisfoto.webp"
+            "imageSrc": "/images/foto4.webp"
           },
           {
-            "title": "✅​ Sincronización del retroceso",
+            "title": "VIAJAR ALTO EN COMODIDAD Y ESTILO",
             "paragraphs": [
-              "Hemos creado un programa específico de sincronización de retroceso para Retro Gun . Sincroniza el retroceso y la vibración con la acción en pantalla. Ajusta la respuesta para que las pistolas, las escopetas y las ametralladoras tengan cada una su propia potencia y velocidad de retroceso , de modo que realmente se siente como si estuvieras sosteniendo un arma diferente. Sin munición, no hay retroceso. Recargar produce una vibración perceptible. Compatible con MameHooker, QmameHooker, Hook of the Reaper y DemulShooter para una retroalimentación precisa y adaptada al juego."
+              "Se proporciona comodidad para los padres colocando al niño en un arco especialmente diseñado, aliviando el cuello y los hombros del estrés directo.",
+              "El peso del niño se distribuye uniformemente a través del cuerpo del portabebé, lo que permite paseos más largos con comodidad y estilo, ¡con niños felices!"
+            ],
+            "listItems": [],
+            "imageSrc": "/images/foto13.webp"
+          },
+          {
+            "title": "PREPARARSE ES MUY FÁCIL",
+            "paragraphs": [
+              "¡El nuevo MiniMeis G5 te equipa en segundos!",
+              "Simplemente despliegue el portabebés, colóquelo sobre los hombros y abroche las hebillas. Levante a su hijo en el asiento y asegúrelo con el cinturón y las correas para las piernas.",
+              "Tanto si prefieres la impresión como la pantalla, hemos creado guías prácticas sencillas para que no tengas dudas. Échales un vistazo."
             ],
             "listItems": [],
             "imageSrc": "/images/minimeis2.mp4"
+          },
+          {
+            "title": "EXPLORADORES SEGUROS Y FELICES",
+            "paragraphs": [
+              "Mientras descubre el mundo, su hijo se sienta seguro sobre sus hombros, sujeto por un cinturón y correas para las piernas. Ambos con elegantes detalles de piel sintética.",
+              "Se incluye una correa para el hombro para brindar soporte adicional en la parte superior del cuerpo para los niños más pequeños (6 a 10 meses).",
+              "El asiento acolchado y el respaldo flexible proporcionan la máxima comodidad mientras disfruta de la vista desde arriba."
+            ],
+            "listItems": [],
+            "imageSrc": "/images/foto5.webp"
           }
         ],
         "hideVariantSelector": true,
