@@ -54,9 +54,10 @@ const workSans = Work_Sans({
 export async function generateMetadata(): Promise<Metadata> {
   const config = (await getContent()) || defaultContent;
   const brandName = config?.footer?.brandName || 'Game Over';
+  const description: string = (config?.metaDescription as string) || `${brandName}®`;
   return {
     title: brandName,
-    description: `Consola ${brandName}®`,
+    description,
   };
 }
 

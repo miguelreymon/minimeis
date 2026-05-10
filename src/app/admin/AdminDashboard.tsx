@@ -260,6 +260,12 @@ function FooterTab({ sc, update }: { sc: AnyObj; update: (fn: (d: AnyObj) => voi
             onChange={(v) => update((d) => (d.siteContent.footer.copyrightText = v))}
           />
         </Field>
+        <Field label="Descripción para redes sociales (Instagram, WhatsApp, X). Si lo dejas vacío usará el nombre de la marca.">
+          <Text
+            value={sc.metaDescription || ''}
+            onChange={(v) => update((d) => (d.siteContent.metaDescription = v))}
+          />
+        </Field>
         <Field label="Número de WhatsApp (solo dígitos)">
           <Text
             value={f.whatsAppNumber}
