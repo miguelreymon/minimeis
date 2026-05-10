@@ -22,6 +22,7 @@ import { cn } from '@/lib/utils';
 import { siteContent as defaultContent } from '@/lib/content';
 import { useConfig } from '@/context/ConfigContext';
 import { getImage } from '@/lib/images';
+import { LazyVideo } from './LazyVideo';
 
 type CarouselVideo = {
   id?: string;
@@ -103,15 +104,7 @@ export default function CustomerReviewsCarousel({ section: sectionOverride }: Cu
                     >
                       <Card className="overflow-hidden">
                         <CardContent className="p-0 aspect-[9/16] relative flex items-center justify-center bg-slate-200">
-                          <video
-                            src={getImage(video.src)}
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            preload="auto"
-                            className="w-full h-full object-cover"
-                          />
+                          <LazyVideo src={getImage(video.src)} />
                           <div className="absolute inset-0 bg-black/30 flex items-center justify-center transition-opacity opacity-0 hover:opacity-100">
                             <PlayCircle className="w-16 h-16 text-white/80" />
                           </div>

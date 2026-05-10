@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { getImage } from '@/lib/images';
+import { LazyVideo } from './LazyVideo';
 
 type FeatureSection = {
   title?: string;
@@ -25,17 +26,7 @@ function isGif(src: string | undefined) {
 
 function FeatureMedia({ src, alt, priority }: { src: string; alt: string; priority?: boolean }) {
   if (isVideo(src)) {
-    return (
-      <video
-        src={src}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload={priority ? 'auto' : 'metadata'}
-        className="w-full h-full object-cover rounded-2xl shadow-md"
-      />
-    );
+    return <LazyVideo src={src} className="rounded-2xl shadow-md" />;
   }
   const gif = isGif(src);
   return (

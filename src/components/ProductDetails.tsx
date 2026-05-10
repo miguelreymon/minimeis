@@ -43,10 +43,11 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import dynamic from 'next/dynamic';
 import ProductInfoAccordion from './ProductInfoAccordion';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import CustomerReviewsCarousel from './CustomerReviewsCarousel';
+const CustomerReviewsCarousel = dynamic(() => import('./CustomerReviewsCarousel'));
 import { useRouter } from 'next/navigation';
 import { siteContent } from '@/lib/content';
 import { getImage } from '@/lib/images';

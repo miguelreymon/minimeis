@@ -1,13 +1,17 @@
 import { notFound } from 'next/navigation';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import ProductGallery from '@/components/ProductGallery';
 import ProductDetails from '@/components/ProductDetails';
-import ProductFeatureSections from '@/components/ProductFeatureSections';
-import Reviews from '@/components/Reviews';
-import { Faq } from '@/components/Faq';
 import { getContent } from '@/lib/data';
 import { siteContent as defaultContent } from '@/lib/content';
 import { getImage } from '@/lib/images';
+
+// Below-the-fold sections: code-split so the initial bundle (gallery + details)
+// arrives faster and renders sooner. They still render server-side for SEO.
+const ProductFeatureSections = dynamic(() => import('@/components/ProductFeatureSections'));
+const Reviews = dynamic(() => import('@/components/Reviews'));
+const Faq = dynamic(() => import('@/components/Faq').then((m) => m.Faq));
 
 export const revalidate = 60;
 
