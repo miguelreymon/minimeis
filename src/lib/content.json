@@ -99,13 +99,13 @@
             },
             {
               "id": "gallery-4",
-              "src": "/images/foto4.webp",
+              "src": "/images/foto10.webp",
               "alt": "Captura de pantalla del juego FIFA",
               "hint": "fifa soccer game"
             },
             {
               "id": "gallery-5",
-              "src": "/images/foto10.webp",
+              "src": "/images/producto2.webp",
               "alt": "Colección de juegos retro",
               "hint": "retro games"
             },
@@ -129,7 +129,19 @@
             },
             {
               "id": "img-1778341080252",
-              "src": "/images/aa.png",
+              "src": "/images/producto13.webp",
+              "alt": "",
+              "hint": ""
+            },
+            {
+              "id": "img-1778399505176",
+              "src": "/images/producto5.webp",
+              "alt": "",
+              "hint": ""
+            },
+            {
+              "id": "img-1778399507457",
+              "src": "/images/producto7.webp",
               "alt": "",
               "hint": ""
             }
@@ -281,27 +293,25 @@
                 "id": "vid-1778322450469",
                 "src": "/images/minimeis2.mp4",
                 "title": ""
+              },
+              {
+                "id": "vid-1778349203480",
+                "src": "/images/video4.mp4",
+                "title": ""
+              },
+              {
+                "id": "vid-1778399597939",
+                "src": "/images/video3.mp4",
+                "title": ""
+              },
+              {
+                "id": "vid-1778399563849",
+                "src": "/images/SURF_S_UP_IN_COSTA_RICA___1_.mp4",
+                "title": ""
               }
             ]
           },
-          "upsells": [
-            {
-              "id": "upsell-1778323584970",
-              "enabled": true,
-              "name": "bolsa minimeis",
-              "image": "/images/producto6.webp",
-              "price": 0,
-              "label": "dfdsfd"
-            },
-            {
-              "id": "upsell-1778323609960",
-              "enabled": true,
-              "name": "1 año de garantia extra",
-              "image": "/images/aa.png",
-              "price": 1,
-              "label": "GRATIS"
-            }
-          ]
+          "upsells": []
         }
       },
       "actionSection": {
@@ -405,9 +415,9 @@
             "name": "Javier M.",
             "date": "12/02/2026",
             "rating": 5,
-            "text": "Una pasada de consola. La compré para recordar viejos tiempos y ha superado mis expectativas. ¡El envío fue en 24 horas!",
+            "text": "Lo incluimos en nuestra lista de regalos para el baby shower y estábamos deseando usarlo. A nuestro pequeño le encanta poder estar ahí arriba y para mí es mucho más cómodo que los portabebés de pecho.",
             "isVerified": true,
-            "image": "/images/v1.avif"
+            "image": "/images/valoracion2.jpg"
           },
           {
             "id": "2",
@@ -416,7 +426,7 @@
             "rating": 5,
             "text": "¡Funciona a la perfección! Fácil de conectar y las pistolas inalámbricas son súper cómodas. Mis hijos están encantados.",
             "isVerified": true,
-            "image": "/images/v2.avif"
+            "image": "/images/valoracion4.jpeg"
           },
           {
             "id": "3",
@@ -769,7 +779,7 @@
             "image": ""
           }
         ],
-        "enabled": true
+        "enabled": false
       },
       "gameSearchSection": {
         "imageSrc": "/images/aa.png"
@@ -778,40 +788,28 @@
         "title": "Preguntas Frecuentes",
         "faqs": [
           {
-            "question": "¿Se pueden guardar las partidas?",
-            "answer": "¡Sí! La mayoría de los juegos te permiten guardar tu progreso. Podrás continuar tus aventuras justo donde las dejaste."
+            "question": "¿Para qué edades es adecuado MiniMeis?",
+            "answer": "Uno de los muchos beneficios del portabebés MiniMeis es que puede usarse durante varios años. Nuestra recomendación principal es desde los 6 meses hasta los 4 años. Pero cada niño es diferente y tiene necesidades diferentes. Como en una trona, el niño debe poder sentarse erguido sin ayuda antes de usar MiniMeis. Debe poder sostener su cabeza. Para los usuarios más pequeños (aprox. de 6 a 10 meses), se puede usar la cinta para el hombro incluida como soporte adicional. Consulta nuestra Guía de inicio para más información."
           },
           {
-            "question": "¿Tiene instrucciones?",
-            "answer": "La consola es muy intuitiva, solo tienes que conectarla y jugar. Para los juegos, la mayoría incluyen tutoriales o puedes encontrar guías fácilmente en internet."
+            "question": "¿Cuánto peso puede soportar MiniMeis?",
+            "answer": "El MiniMeis ha sido probado según la norma europea EN-13209-1:2044 y la norma estadounidense ASTM F 2549 14a. Ha sido probado hasta un máximo de 18 kg. Dicho esto, los materiales son muy duraderos y pueden soportar más peso del que cómodamente querrías llevar — así que depende de ti, el padre o madre, cuánto peso quieras cargar."
           },
           {
-            "question": "¿Vienen incluidos los juegos o solo la pistola?",
-            "answer": "Si adquieres uno de nuestros paquetes combinados, recibirás nuestra tarjeta USB de 1 TB con más de 15 000 títulos arcade clásicos listos para jugar."
+            "question": "¿Es MiniMeis igualmente adecuado para mujeres y hombres?",
+            "answer": "El producto fue diseñado por padres, basado en anatomía masculina. Muchas madres lo han amado, otras no lo encuentran tan cómodo. El tamaño y forma del pecho femenino varía mucho más. Nuestro consejo para mujeres (o hombres) con pecho grande: aprieta firmemente las cintas laterales y deja la cinta del pecho suelta. Si sigue siendo incómodo, suéltala del todo. Las cintas laterales deben seguir bien ajustadas. Así no habrá presión sobre el pecho y MiniMeis seguirá bien sujeto al torso."
           },
           {
-            "question": "¿La calidad de imagen es buena en televisores 4K?",
-            "answer": "Sí, la consola se conecta por HDMI y ofrece una resolución HD que se reescala muy bien en televisores 4K. Los juegos se ven nítidos y con colores vivos, manteniendo su encanto retro."
+            "question": "¿Es seguro el MiniMeis?",
+            "answer": "MiniMeis ha sido probado durante años, y la seguridad siempre ha sido la prioridad en su desarrollo. MiniMeis G4 ha sido aprobado según las normas EN-13209-1:2044 y ASTM F 2549 14a. Es uno de los portabebés más seguros del mercado. Como MiniMeis no cuelga libremente, su sistema de sujeción y distribución del peso sufre menos desgaste por gravedad que otros portabebés. El niño se sienta en una posición natural, bien asegurado sobre los hombros del adulto. El peso se distribuye uniformemente y permite mantener el equilibrio natural. Las cintas para las piernas reemplazan el agarre manual tradicional y sujetan al niño. El respaldo evita que se caiga hacia atrás y la cabeza del adulto hacia adelante. El cinturón de cintura ofrece seguridad adicional.\n\nPara los más pequeños (6 – 10 meses aprox.), MiniMeis incluye una cinta adicional con un arnés de seguridad patentado de 9 puntos. Consulta la guía de inicio para más información. MiniMeis G4 tiene un sistema de distribución de peso que evita presión directa sobre cuello, hombros y clavícula. Solo hay que tener cuidado con obstáculos altos al caminar con el niño en los hombros."
           },
           {
-            "question": "¿Puedo agregar más juegos?",
-            "answer": "¡Por supuesto! La consola viene con una tarjeta de memoria extraíble. Puedes conectar la tarjeta a tu ordenador y añadir fácilmente más juegos si lo deseas."
+            "question": "¿Cómo puedo contactarlos?",
+            "answer": "¡Habla con nosotros, estamos aquí para ayudarte!\nVisita esta página para contactarnos directamente. Estaremos encantados de ayudarte con cualquier pregunta, comentario o sugerencia."
           },
           {
-            "question": "¿Necesito internet para jugar?",
-            "answer": "No, no necesitas conexión a internet. Todos los juegos están preinstalados en la consola. Es conectar y jugar, como en los viejos tiempos."
-          },
-          {
-            "question": "¿Pueden jugar dos personas al mismo tiempo?",
-            "answer": "Sí, nuestro sistema es compatible con el modo multijugador local. Al seleccionar el Conjunto para 2 jugadores, recibirás dos pistolas que funcionan de forma independiente en la misma pantalla para enfrentamientos cara a cara."
-          },
-          {
-            "question": "¿El envío es rápido?",
-            "answer": "¡Muy rápido! Procesamos los pedidos en 24 horas y el envío suele tardar entre 24 y 72 horas laborables en llegar a tu casa."
-          },
-          {
-            "question": "Parece demasiado bueno para ser verdad, ¿es una estafa?",
-            "answer": "¡Entendemos el escepticismo! Gameover es un proyecto creado por fans para fans. Utilizamos tecnología infrarroja estándar de la industria y ofrecemos pagos seguros con Bizum, garantizando la total protección del comprador. Consulta nuestros vídeos de demostración en redes sociales para ver el sistema en acción."
+            "question": "¿Cuánto tarda el envío?",
+            "answer": "Ofrecemos envío gratuito con MRW en todos los pedidos. El tiempo estimado de envío es de 2 a 3 días hábiles desde el momento en que se procesa tu pedido.\n\n🚚 Seguimiento de tu pedido\nTu número de seguimiento estará disponible inmediatamente después de realizar tu compra, lo que te permitirá monitorear el estado de tu pedido en tiempo real.\n\nSi tienes cualquier duda, no dudes en contactarnos. 😊"
           }
         ],
         "image": "/images/minimeisfoto.webp"
@@ -933,13 +931,13 @@
           },
           {
             "id": "gallery-4",
-            "src": "/images/foto4.webp",
+            "src": "/images/foto10.webp",
             "alt": "Captura de pantalla del juego FIFA",
             "hint": "fifa soccer game"
           },
           {
             "id": "gallery-5",
-            "src": "/images/foto10.webp",
+            "src": "/images/producto2.webp",
             "alt": "Colección de juegos retro",
             "hint": "retro games"
           },
@@ -963,7 +961,19 @@
           },
           {
             "id": "img-1778341080252",
-            "src": "/images/aa.png",
+            "src": "/images/producto13.webp",
+            "alt": "",
+            "hint": ""
+          },
+          {
+            "id": "img-1778399505176",
+            "src": "/images/producto5.webp",
+            "alt": "",
+            "hint": ""
+          },
+          {
+            "id": "img-1778399507457",
+            "src": "/images/producto7.webp",
             "alt": "",
             "hint": ""
           }
@@ -1115,27 +1125,25 @@
               "id": "vid-1778322450469",
               "src": "/images/minimeis2.mp4",
               "title": ""
+            },
+            {
+              "id": "vid-1778349203480",
+              "src": "/images/video4.mp4",
+              "title": ""
+            },
+            {
+              "id": "vid-1778399597939",
+              "src": "/images/video3.mp4",
+              "title": ""
+            },
+            {
+              "id": "vid-1778399563849",
+              "src": "/images/SURF_S_UP_IN_COSTA_RICA___1_.mp4",
+              "title": ""
             }
           ]
         },
-        "upsells": [
-          {
-            "id": "upsell-1778323584970",
-            "enabled": true,
-            "name": "bolsa minimeis",
-            "image": "/images/producto6.webp",
-            "price": 0,
-            "label": "dfdsfd"
-          },
-          {
-            "id": "upsell-1778323609960",
-            "enabled": true,
-            "name": "1 año de garantia extra",
-            "image": "/images/aa.png",
-            "price": 1,
-            "label": "GRATIS"
-          }
-        ]
+        "upsells": []
       }
     ],
     "featuredProductSlug": "portabebes",
@@ -1151,10 +1159,6 @@
         "href": "/"
       },
       {
-        "text": "Sobre Nosotros",
-        "href": "/sobre-nosotros"
-      },
-      {
         "text": "Localiza tu pedido",
         "href": "/localizar-pedido"
       },
@@ -1165,7 +1169,7 @@
     ],
     "coupons": [
       {
-        "code": "game20",
+        "code": "mini20",
         "type": "percentOff",
         "value": 20,
         "title": "¡Cupón aplicado!",

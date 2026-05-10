@@ -1,6 +1,6 @@
 # Minimeis (Game Over)
 
-E-commerce Next.js para la consola Gameover®.
+E-commerce Next.js para la consola Gameover®. Tienda online optimizada para Vercel.
 
 ## Stack
 - **Framework:** Next.js 15 (App Router) + React 19 + TypeScript
