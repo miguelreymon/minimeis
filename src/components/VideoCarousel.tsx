@@ -21,6 +21,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { PlayCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { siteContent } from '@/lib/content';
+import { LazyVideo } from './LazyVideo';
 
 const { title, videos } = siteContent.homePage.videoCarouselSection;
 
@@ -88,13 +89,11 @@ export default function VideoCarousel() {
                         <CardContent className="p-0 aspect-[9/16] relative flex items-center justify-center bg-muted">
                           {video.src ? (
                             <>
-                            <video
+                            <LazyVideo
                               src={video.src}
-                              autoPlay
-                              loop
-                              muted
-                              playsInline
+                              poster={(video as any).poster}
                               className="w-full h-full object-cover"
+                              rootMargin="400px"
                             />
                             <div className="absolute inset-0 bg-black/30 flex items-center justify-center transition-opacity opacity-0 hover:opacity-100">
                               <PlayCircle className="w-16 h-16 text-white/80" />
@@ -118,6 +117,7 @@ export default function VideoCarousel() {
                         src={selectedVideo?.src}
                         controls
                         autoPlay
+                        preload="metadata"
                         className="w-full h-full rounded-lg"
                       />
                     </div>

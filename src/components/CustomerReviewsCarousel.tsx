@@ -121,6 +121,7 @@ export default function CustomerReviewsCarousel({ section: sectionOverride }: Cu
                         src={getImage(selectedVideo?.src || '')}
                         controls
                         autoPlay
+                        preload="metadata"
                         className="w-full h-full rounded-lg"
                       />
                     </div>
