@@ -4,6 +4,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useCart } from '@/context/CartContext';
+import { useCurrency } from '@/context/CurrencyContext';
 import { Button } from '@/components/ui/button';
 import { getImage } from '@/lib/images';
 import {
@@ -30,6 +31,7 @@ export function CartDrawer() {
     updateQuantity,
     removeFromCart,
   } = useCart();
+  const { format } = useCurrency();
   const [isClient, setIsClient] = useState(false);
   const [isCheckingOut, setIsCheckingOut] = useState(false);
   const router = useRouter();
@@ -91,7 +93,7 @@ export function CartDrawer() {
                       )}
                        {item.price > 0 && (
                          <p className="text-sm font-semibold mt-1">
-                           {`${item.price.toFixed(0)}€`}
+                           {`${format(item.price)}`}
                          </p>
                        )}
                       {!item.isUpsell && (
@@ -139,7 +141,7 @@ export function CartDrawer() {
               <div className="w-full space-y-4">
                 <div className="flex justify-between font-semibold">
                   <span>Subtotal</span>
-                  <span>{subtotal.toFixed(0)}€</span>
+                  <span>{format(subtotal)}</span>
                 </div>
                 <p className="text-xs text-muted-foreground">
                   Impuestos y envío calculados en la pantalla de pago.

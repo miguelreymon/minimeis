@@ -172,7 +172,7 @@
               "content": "Nuestro equipo de soporte está disponible las 24 horas para ayudarte con cualquier duda o problema."
             }
           },
-          "distributorBadge": "Distribuidor oficial en España y Europa",
+          "distributorBadge": "Distribuidor oficial en España y Latinoamérica",
           "purchaseBenefits": {
             "gifts": "",
             "games": "",
@@ -297,16 +297,6 @@
               {
                 "id": "vid-1778349203480",
                 "src": "/images/video4.mp4",
-                "title": ""
-              },
-              {
-                "id": "vid-1778399597939",
-                "src": "/images/video3.mp4",
-                "title": ""
-              },
-              {
-                "id": "vid-1778399563849",
-                "src": "/images/SURF_S_UP_IN_COSTA_RICA___1_.mp4",
                 "title": ""
               }
             ]
@@ -1004,7 +994,7 @@
             "content": "Nuestro equipo de soporte está disponible las 24 horas para ayudarte con cualquier duda o problema."
           }
         },
-        "distributorBadge": "Distribuidor oficial en España y Europa",
+        "distributorBadge": "Distribuidor oficial en España y Latinoamérica",
         "purchaseBenefits": {
           "gifts": "",
           "games": "",
@@ -1129,16 +1119,6 @@
             {
               "id": "vid-1778349203480",
               "src": "/images/video4.mp4",
-              "title": ""
-            },
-            {
-              "id": "vid-1778399597939",
-              "src": "/images/video3.mp4",
-              "title": ""
-            },
-            {
-              "id": "vid-1778399563849",
-              "src": "/images/SURF_S_UP_IN_COSTA_RICA___1_.mp4",
               "title": ""
             }
           ]

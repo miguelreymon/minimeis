@@ -14,6 +14,7 @@ import {
   X,
 } from 'lucide-react';
 import { Separator } from './ui/separator';
+import { CurrencySwitcher } from './CurrencySwitcher';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -51,6 +52,10 @@ export function MobileMenu({ isOpen, setIsOpen, navLinks }: MobileMenuProps) {
                 </Link>
             ))}
           </nav>
+          <div className="mt-6 pt-4 border-t">
+            <p className="px-2 mb-2 text-xs uppercase tracking-wide text-muted-foreground font-semibold">Moneda</p>
+            <CurrencySwitcher variant="mobile" />
+          </div>
         </div>
       </SheetContent>
     </Sheet>

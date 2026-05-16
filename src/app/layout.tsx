@@ -2,6 +2,7 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import { CartProvider } from '@/context/CartContext';
+import { CurrencyProvider } from '@/context/CurrencyContext';
 import Script from 'next/script';
 import { getContent } from '@/lib/data';
 import { siteContent as defaultContent } from '@/lib/content';
@@ -101,8 +102,10 @@ export default async function RootLayout({
           />
         </noscript>
         <CartProvider>
-          <AppLayout initialConfig={config}>{children}</AppLayout>
-          <Toaster />
+          <CurrencyProvider>
+            <AppLayout initialConfig={config}>{children}</AppLayout>
+            <Toaster />
+          </CurrencyProvider>
         </CartProvider>
         <Analytics />
         <SpeedInsights />

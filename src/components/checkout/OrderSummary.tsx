@@ -2,6 +2,7 @@
 'use client';
 
 import { useCart } from '@/context/CartContext';
+import { useCurrency } from '@/context/CurrencyContext';
 import Image from 'next/image';
 import { getImage } from '@/lib/images';
 import { Separator } from '@/components/ui/separator';
@@ -30,6 +31,7 @@ export default function OrderSummary({
   handleApplyCoupon,
 }: OrderSummaryProps) {
   const { cartItems, updateQuantity, removeFromCart } = useCart();
+  const { format, currency } = useCurrency();
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -92,7 +94,7 @@ export default function OrderSummary({
             </div>
             <div className="text-right flex flex-col items-end">
                 {item.price > 0 && (
-                    <p className="font-semibold whitespace-nowrap">{(item.price * item.quantity).toFixed(0)}€</p>
+                    <p className="font-semibold whitespace-nowrap">{format(item.price * item.quantity)}</p>
                 )}
                 {!item.isUpsell && (
                     <Button 
@@ -124,30 +126,35 @@ export default function OrderSummary({
       <div className="space-y-2">
         <div className="flex justify-between">
           <p>Subtotal</p>
-          <p>{subtotal.toFixed(0)}€</p>
+          <p>{format(subtotal)}</p>
         </div>
         <div className="flex justify-between">
           <p>Envío y gestión</p>
-          <p>{shippingFee === 0 ? 'Gratis' : `${shippingFee.toFixed(0)}€`}</p>
+          <p>{shippingFee === 0 ? 'Gratis' : format(shippingFee)}</p>
         </div>
         {discount > 0 && (
           <div className="flex justify-between text-green-600 font-medium">
             <p>Descuento</p>
-            <p>-{discount.toFixed(0)}€</p>
+            <p>-{format(discount)}</p>
           </div>
         )}
         {bizumDiscount > 0 && (
           <div className="flex justify-between text-green-600 font-medium">
             <p>Descuento Bizum (10%)</p>
-            <p>-{bizumDiscount.toFixed(0)}€</p>
+            <p>-{format(bizumDiscount)}</p>
           </div>
         )}
       </div>
       <Separator />
       <div className="flex justify-between font-bold text-lg">
         <p>Total</p>
-        <p>{total > 0 ? total.toFixed(0) : 0}€</p>
+        <p>{format(total > 0 ? total : 0)}</p>
       </div>
+      {currency !== 'EUR' && total > 0 && (
+        <p className="text-[11px] text-muted-foreground text-right -mt-3">
+          El cobro se realizará en EUR (≈ {total.toFixed(0)}€). El importe en tu moneda es orientativo según el tipo de cambio actual.
+        </p>
+      )}
     </div>
   );
 }

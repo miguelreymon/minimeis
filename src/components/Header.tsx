@@ -11,6 +11,7 @@ import Image from 'next/image';
 import { siteContent as defaultContent } from '@/lib/content';
 import { useConfig } from '@/context/ConfigContext';
 import { getImage } from '@/lib/images';
+import { CurrencySwitcher } from './CurrencySwitcher';
 
 // Lazy: solo cargan al abrirse, no en la primera visita
 const CartDrawer = dynamic(
@@ -83,6 +84,9 @@ export function Header() {
           </div>
 
           <div className="flex items-center justify-end space-x-2">
+            <div className="hidden md:inline-flex">
+              <CurrencySwitcher variant="header" />
+            </div>
             <Link href="/login" passHref>
               <Button
                 variant="ghost"

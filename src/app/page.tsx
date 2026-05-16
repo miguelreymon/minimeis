@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useConfig } from '@/context/ConfigContext';
+import { useCurrency } from '@/context/CurrencyContext';
 import { siteContent as defaultContent } from '@/lib/content';
 import { getImage } from '@/lib/images';
 import Reviews from '@/components/Reviews';
@@ -10,6 +11,7 @@ import { Faq } from '@/components/Faq';
 
 export default function Home() {
   const config = useConfig();
+  const { format } = useCurrency();
   const siteContent = config || defaultContent;
 
   if (!siteContent) {
@@ -101,11 +103,11 @@ export default function Home() {
                     {price != null && (
                       <div className="flex items-baseline gap-2 pt-1">
                         <span className="text-xl font-bold text-accent">
-                          {price}€
+                          {format(price)}
                         </span>
                         {originalPrice && originalPrice > price && (
                           <span className="text-sm text-muted-foreground line-through">
-                            {originalPrice}€
+                            {format(originalPrice)}
                           </span>
                         )}
                       </div>

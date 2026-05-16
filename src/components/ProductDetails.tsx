@@ -4,6 +4,7 @@
 import * as React from 'react';
 import { useState, useRef, useEffect } from 'react';
 import { useCart } from '@/context/CartContext';
+import { useCurrency } from '@/context/CurrencyContext';
 import { useToast } from '@/hooks/use-toast';
 import type { Product, ProductVariant } from '@/lib/products';
 import { Button } from '@/components/ui/button';
@@ -321,6 +322,8 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
     }
   };
 
+  const { format } = useCurrency();
+
   return (
     <div className="flex flex-col space-y-6">
       <div className="space-y-2">
@@ -331,11 +334,11 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
         <div className="flex items-center space-x-3">
           {selectedVariant.originalPrice && (
             <span className="text-xl line-through text-muted-foreground">
-              {selectedVariant.originalPrice.toFixed(0)}€
+              {format(selectedVariant.originalPrice)}
             </span>
           )}
           <span className="text-2xl font-bold text-accent">
-            {selectedVariant.price.toFixed(0)}€
+            {format(selectedVariant.price)}
           </span>
           {selectedVariant.originalPrice && (
             <Badge
@@ -398,7 +401,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
               <span className={cn("font-semibold", outOfStock && "line-through text-muted-foreground")}>
                 {variant.name}
               </span>
-              <span className="text-sm text-muted-foreground">{variant.price.toFixed(0)}€</span>
+              <span className="text-sm text-muted-foreground">{format(variant.price)}</span>
               {outOfStock ? (
                 <span className="mt-1 text-[11px] font-semibold text-slate-600 uppercase tracking-wide">
                   Sin stock
@@ -577,7 +580,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
               </h3>
               <h3 className="font-bold hidden sm:block">{product.name}</h3>
               <p className="text-base sm:text-lg font-bold text-accent">
-                {selectedVariant.price.toFixed(0)}€
+                {format(selectedVariant.price)}
                 {!product.hideVariantSelector && (
                   <span className="text-xs sm:text-sm text-muted-foreground font-normal">
                     {' '}({selectedVariant.name})
